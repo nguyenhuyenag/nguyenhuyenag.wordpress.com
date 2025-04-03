@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}[Vasile Cirtoaje]
+If $a,\,b,\,c$ are positive real numbers, then
+\begin{equation}\label{eq_w8a6k}
+\frac{a^2}{a^2+ab+b^2} + \frac{b^2}{b^2+bc+c^2} + \frac{c^2}{c^2+ca+a^2} \ge 1.
+\end{equation}
+\end{pro_no_count}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) Since
+\[\sum \dfrac{a(ab-c^2)}{a+b+c} = 0,\]
+and
+\[\sum \frac{b^2+ab}{a^2+b^2+c^2+ab+bc+ca} = 1.\]
+% We have the following estimate
+We see that the inequality \eqref{eq_w8a6k} follows by adding the inequality below and two similar inequalities
+\begin{equation}\label{eq02042005124}
+\frac{b^2}{b^2+bc+c^2} \ge \frac{b^2+ab+\dfrac{a(ab-c^2)}{a+b+c}}{a^2+b^2+c^2+ab+bc+ca}.
+\end{equation}
+Indeed, we can rewrite the inequality \eqref{eq02042005124} as
+\[\frac{b^2}{b^2+bc+c^2} -  \frac{b^2+ab}{a^2+b^2+c^2+ab+bc+ca} \ge \frac{\dfrac{a(ab-c^2)}{a+b+c}}{a^2+b^2+c^2+ab+bc+ca},\]
+or
+\[\frac{ab(ab-c^2)}{b^2+bc+c^2} \ge \frac{a(ab-c^2)}{a+b+c},\]
+which is equivalent to
+\[\frac{a(ab-c^2)^2}{(a+b+c)(b^2+bc+c^2)} \ge 0.\]
+Thus, the inequality \eqref{eq02042005124} is proven.
+%
+%Thus
+%\[\sum \frac{b^2}{b^2+bc+c^2} \ge \sum \frac{b^2+ab+\dfrac{a(ab-c^2)}{a+b+c}}{a^2+b^2+c^2+ab+bc+ca} = \sum \frac{b^2+ab}{a^2+b^2+c^2+ab+bc+ca} = 1.\]
+\end{proof}
+
+\end{document}

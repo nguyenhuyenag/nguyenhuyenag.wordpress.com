@@ -1,0 +1,70 @@
+\usepackage[svgnames]{xcolor}		% For color names
+
+\usepackage[vietnamese]{babel}		% For the content
+%\usepackage{vntex}					% For the title, captions
+
+\usepackage{times}
+\usepackage[unicode]{hyperref}		% For hyperlinks
+
+% --------------------------------------------------------------------------------------
+% Packages for Mathematics
+\usepackage{mtpro2}
+% ----- Neu khong dung goi mtpro2 ----- %
+%\usepackage{mathptmx}
+%\usepackage{amssymb}
+% --------------------------------------------------------------------------------------
+
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts} 				% For maths fonts
+\usepackage{amsthm} 				% For maths theorem
+
+\usepackage{tikz}					% For plotting charts/figures/diagrams/etc.
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+
+% --------------------------------------------------------------------------------------
+% Packages for references, biographies
+% --------------------------------------------------------------------------------------
+\usepackage[square,numbers,sectionbib]{natbib}	% For chapter refs
+\usepackage{chapterbib}
+
+% --------------------------------------------------------------------------------------
+% Packages for Layout 
+% --------------------------------------------------------------------------------------
+\usepackage[width=16cm,height=24cm,top=3cm]{geometry}
+\usepackage{caption}			% For captions
+\usepackage{wrapfig}			% For figures
+\usepackage{mdframed}			% For sidenotes and other frames
+\usepackage{wasysym}			% For emoticons. Notes: This package must be use after the maths packages.
+\usepackage{background}			% For background
+\usepackage{wallpaper}			% For background images
+\usepackage{fancyhdr}			% For margins, headers, footers
+\usepackage{titletoc}			% For table of contents
+\usepackage{titlesec}
+\usepackage{suffix}				% For authors in TOC
+\usepackage{tocloft}
+\usepackage{xparse}
+\usepackage{xspace}
+\usepackage{pdfpages}
+\usepackage{listings}
+
+% Tăng khoảng cách của new line
+\usepackage{parskip}
+
+% Thụt đầu dòng cho enumerate
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{array}
+\usepackage{makecell}
+\newcommand\diag[4]{%
+  \multicolumn{1}{|p{#2}|}{\hskip-\tabcolsep
+  $\vcenter{\begin{tikzpicture}[baseline=0,anchor=south west,inner sep=#1]
+  \path[use as bounding box] (0,0) rectangle (#2+2\tabcolsep,\baselineskip);
+  \node[minimum width={#2+2\tabcolsep-\pgflinewidth},
+        minimum  height=\baselineskip+\extrarowheight-\pgflinewidth] (box) {};
+  \draw[line cap=round] (box.north west) -- (box.south east);
+  \node[anchor=south west] at (box.south west) {#3};
+  \node[anchor=north east] at (box.north east) {#4};
+ \end{tikzpicture}}$\hskip-\tabcolsep}}
+\newcolumntype{x}[1]{>{\centering\arraybackslash}p{#1}}

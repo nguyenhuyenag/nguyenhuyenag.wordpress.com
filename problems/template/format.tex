@@ -1,0 +1,173 @@
+%------------------------------------------------
+% Hyperlinks
+\hypersetup {
+	colorlinks,
+	% linkcolor=black,
+	% linktoc=all
+	linkcolor=red,	% Màu số của footnode
+	urlcolor=purple,
+}
+
+%------------------------------------------------
+% Numbering
+\renewcommand*\thesection{\arabic{section}}		% Only number by section (default is by chapter.section)
+
+\setcounter{secnumdepth}{4}	% number the section until subsubsection
+
+%------------------------------------------------
+% Margin
+\parindent 0pt
+\evensidemargin=0cm
+\oddsidemargin=0cm
+
+%------------------------------------------------
+% Font
+%\renewcommand{\rmdefault}{ubk}	% Choose Bookman (typeface)
+%\selectfont
+
+%------------------------------------------------
+% Background
+
+\SetBgColor{Teal}	% this color is from svgnames
+\SetBgAngle{90}
+\SetBgPosition{current page.center}
+\SetBgVshift{0.4\textwidth}
+\SetBgScale{1.8}
+\SetBgContents{\texttt{~}}
+
+%------------------------------------------------
+% Colors
+
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+
+\newcommand\chapterColor{\color{red!100!blue!50!black!75!}}
+\newcommand\sectionColor{\color{red!80!yellow!70!}}
+\newcommand\authorColor{\color{black!80!}}
+\newcommand\problemColor{\color{alizarin}}
+\newcommand\TOCBulletColor{\color{black!70!}}
+\newcommand\abstractColor{\color{brown!100!black!120!}}
+
+% Titles
+
+\titleformat{\chapter}[display]
+	{\vspace*{120pt}\usefont{T5}{iwona}{b}{n}\Huge}
+	{
+		\rule{\textwidth}{2.0pt}\vspace*{-\baselineskip}\vspace*{-85pt}
+		\rule{\textwidth}{2.0pt}\vspace*{-\baselineskip}\vspace*{-5pt}
+	}
+  	{0pt}
+  	{\filright\filleft}
+
+% \titlespacing*{\chapter}{0pt}{-15pt}{40pt}
+
+\titleformat{\section}
+	{\usefont{T5}{cmss}{bx}{n}\Large}
+  	{\thesection.}{0.5em}{}
+
+\titleformat{\subsection}
+  	{\usefont{T5}{cmss}{bx}{n}\large}
+  	{\thesubsection.}{0.5em}{}
+
+\titleformat{\subsubsection}
+  	{\usefont{T5}{cmss}{bx}{n}\large}
+  	{\thesubsubsection.}{0.5em}{}
+  
+%------------------------------------------------
+% Table of contents
+%\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+%\renewcommand{\cftaftertoctitle}{\hfill}
+%\addto\captionsvietnam{\renewcommand{\contentsname}{\usefont{T5}{iwona}{b}{n}\LARGE MỤC LỤC}}
+
+%\titlecontents{chapter}
+%	[0em]             	% left margin
+%	{\vspace{0.5cm}}	% above code
+%	{%                  % numbered format
+%	%{{\bf\contentslabel{2em}}}%
+%	% {\hspace*{6mm}}
+%	}%
+%	{\bfseries}         % unnumbered format
+%	{\cftdotfill{\cftchapdotsep}\usefont{T5}{iwona}{l}{n}\contentspage\medskip}         % 
+
+\renewcommand\cftchapdotsep{\cftdotsep}
+\renewcommand\cftchapleader{\cftdotfill{\cftchapdotsep}}
+
+%\makeatletter
+%\DeclareRobustCommand\authortoctext[1]{%
+%	{\addvspace{10pt}\nopagebreak\leftskip0em\relax
+%	\rightskip \@tocrmarg\relax
+%	\noindent\usefont{T5}{iwona}{b}{it}#1\par\addvspace{-7pt}}
+%}
+
+%\makeatother
+%\newcommand\authortoc[1]{%
+%  \gdef\chapterauthor{#1}%
+%  \addtocontents{toc}{\authortoctext{#1}}}
+%\makeatother
+
+\NewDocumentCommand{\thesischapter}{o m m}{%
+   \IfNoValueTF{#1}
+     {\chapter[#2]{#2\origtitle{#3}}}
+     {\chapter[#1]{#2\origtitle{#3}}}%
+}
+\newcommand\origtitle[1]{\\
+  \parbox{\textwidth}{\usefont{T5}{iwona}{l}{n}\centering\normalsize \vspace*{\baselineskip}#1}}
+
+\newcommand{\dd}{\textquotedblleft}
+\newcommand{\ee}{\textquotedblright}
+
+\def\abstract{	
+	\centering
+	\hspace{0.075\textwidth}
+	\begin{minipage}{0.85\textwidth}
+		\begin{center}
+			\large \scshape Tóm tắt
+		\end{center}
+		\setlength{\parskip}{1ex plus 1ex minus 0.3ex} 
+		\small
+}
+
+\def\newAbstract#1{
+	\centering
+	\hspace{0.075\textwidth}
+	\begin{minipage}{0.85\textwidth}
+		\begin{center}
+			\large \scshape  
+			\ifthenelse{\equal{#1}{}}{Giới thiệu}{#1}
+		\end{center}
+		\setlength{\parskip}{1ex plus 1ex minus 0.3ex} 
+		\small
+}
+
+\def\endabstract{
+	\end{minipage}
+}
+
+\def\endnewAbstract{
+	\end{minipage}
+}
+
+% \setlength{\parskip}{2.9ex plus 1ex minus 0.3ex}	% Khoảng cách giữa các dòng
+\renewcommand{\theequation}{\arabic{equation}} 		% Định nghĩa equation đánh số nguyên
+
+\addto\captionsvietnamese{\renewcommand{\proofname}{\cmss\problemColor{Solution}}}
+
+\renewcommand{\bibsection}{\section*{References}} % Đổi tên `Tài liệu tham khảo`
+
+\pagestyle{fancy}
+\def\headrulewidth{0.5pt}	% Remove the line of the header
+\fancyhead[LO,RE]{\texttt{nguyenhuyenag.wordpress.com}}
+\fancyhead[RO,LE]{}
+
+% Configure background (watermark) settings
+\usepackage{background}
+\backgroundsetup {
+	scale=3,                % Scale of the background image (e.g., 3 times the normal size)
+	color=gray,             % Color of the background (if using text or colors)
+	opacity=0.2,            % Opacity of the background
+	angle=45,               % Angle of rotation (in degrees)
+	% position=current page.south, % Position of the background (e.g., south of the current page)
+	vshift=1cm,             % Vertical shift of the background
+	hshift=1cm,             % Horizontal shift of the background
+	contents={\Huge\it Nguyenhuyen\_AG} % Text that appears in the background
+}
+% End configure background settings

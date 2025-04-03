@@ -1,0 +1,93 @@
+% ---- frame problem ----
+\usepackage{mdframed}
+\mdfdefinestyle{frame}{
+	linewidth=3pt,
+	linecolor=gray,
+	backgroundcolor=gray!6,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	innerleftmargin=0.5em
+}
+\surroundwithmdframed[style=frame]{}
+% ---- end frame ----
+
+% \newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\hh}{\usefont{T5}{iwona}{b}{n}}
+\newcommand{\cmss}{\usefont{T5}{cmss}{bx}{n}}
+\newcommand{\iwona}{\usefont{T5}{iwona}{l}{n}}
+
+\newtheoremstyle{newstyle}
+	{8pt}	% Space above
+	{8pt}	% Space below
+	{\it}	% Body font
+	{}		% Indent amount
+	{}		% Theorem head font
+	{.}		% Punctuation after theorem head
+	{.5em}	% Space after theorem head
+	{}		% Theorem head spec (can be left empty, meaning `normal')
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm,thmtools}
+\declaretheoremstyle[
+	spaceabove=15pt, 	% Khoảng cách giữa 2 theoremstyle
+	spacebelow=15pt		% Khoảng cách giữa 2 theoremstyle
+]{definition}
+\declaretheorem[name=Theorem,numberwithin=chapter,style=definition]{plain,theorem,definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\theoremstyle{newstyle}
+\newtheorem{bode}{\cmss Bổ đề}
+\newtheorem{baitoan}{\cmss\problemColor Bài toán}
+\newtheorem{pro}{\cmss\problemColor Problem}
+\newtheorem*{mypro}{\cmss\problemColor Problem}
+\newtheorem*{lemma}{\cmss\problemColor Lemma}
+\newtheorem*{bt}{\cmss\problemColor\color{red} Bài toán}
+\newtheorem*{pro_no_count}{\cmss\problemColor Problem}
+
+\theoremstyle{definition}
+\newtheorem{baitap}{\cmss\problemColor Bài tập}
+\newtheorem*{nhanxet}{\cmss\problemColor Nhận xét}
+\newtheorem*{note}{\cmss\problemColor Note}
+\newtheorem*{remark}{\cmss\problemColor Remark}
+
+\def\ge{\geqslant}
+\def\le{\leqslant}
+\def\geq{\geqslant}
+\def\leq{\leqslant}
+
+% ---- code ---- %
+\usepackage[T1]{fontenc}
+% \usepackage[formats]{listings}
+
+\definecolor{backgroundcolor}{gray}{0.97}
+\definecolor{indigo(dye)}{rgb}{0.0, 0.25, 0.42}
+
+\def\lcode#1{{\ttfamily\detokenize{#1}}} % code in line
+\def\code#1{{\ttfamily\detokenize{> #1}}}
+
+\lstset {
+  	tabsize			= 4,
+	breaklines		= true,
+	frame			= single,
+	columns			= fullflexible,
+    backgroundcolor	= \color{backgroundcolor},
+    basicstyle		= \footnotesize\ttfamily  	
+}
+
+% Keywords here high line 
+\lstset {
+	emph=[1] {
+       local, global, proc, for, from, to, do, end, if, else, fi, then, elif, return
+    },
+    emphstyle=[1]{\color{indigo(dye)}\bfseries},
+    %
+    emph=[2]% Variable Types
+    {% 
+        `:=`,
+    },
+  emphstyle=[2]{\color{blue}},
+}
+% ---- end code ---- 
