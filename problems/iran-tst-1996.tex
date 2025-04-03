@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}[Ji Chen, Iran TST 1996]
+Let $a,\,b,\,c$ be non-negative real numbers, no two of which are zero. Prove that
+$$(ab+bc+ca)\left [ \frac{1}{(a+b)^2}+\frac{1}{(b+c)^2}+\frac{1}{(c+a)^2} \right ] \geqslant \frac{9}{4}.$$
+% \begin{flushright}(Ji Chen, Iran TST 1996)\end{flushright}
+\end{pro_no_count}
+
+\begin{proof}[\cmss\problemColor Solution 1] 
+(\textit{Nguyen Van Huyen}) Asumme that $c = \min \{a,b,c\}.$ The inequality results from adding the two inequalities below
+$$\frac{1}{(b+c)^2}+\frac{1}{(c+a)^2} \geqslant \frac{2(a^2+b^2)+(a+b)^2}{(a+b)^2(b+c)(c+a)},$$
+$$\frac{1}{(a+b)^2}+\frac{2(a^2+b^2)+(a+b)^2}{(a+b)^2(b+c)(c+a)} \geqslant \frac{9}{4(ab+bc+ca)}.$$
+Indeed, we have
+$$\frac{1}{(b+c)^2}+\frac{1}{(c+a)^2} - \frac{2(a^2+b^2)+(a+b)^2}{(a+b)^2(b+c)(c+a)} = \frac{(a-b)^2[(a+b)^2-(a+c)(b+c)]}{(a+b)^2(b+c)^2(c+a)^2} \geqslant 0.$$
+and
+$$\frac{1}{(a+b)^2}+\frac{2(a^2+b^2)+(a+b)^2}{(a+b)^2(b+c)(c+a)} - \frac{9}{4(ab+bc+ca)}$$
+$$ = \frac{(3ab+c^2)(a-b)^2+c(3b+a)(b-c)^2+c(3a+b)(c-a)^2}{4(ab+bc+ca)(a+b)^2(b+c)(c+a)} \geqslant 0.$$
+The proof is completed.
+\end{proof}
+
+\begin{proof}[\cmss\problemColor Solution 2]
+(\textit{Nguyen Van Huyen}) Since
+\[\sum \frac{10a^3+11(b+c)a^2+8(b^2+c^2)a-(b+c)(5b^2-13bc+5c^2)}{12[ab(a+b)+bc(b+c)+ca(c+a)]} = \frac{9}{4}.\]
+We have the following estimate
+\[\frac{ab+bc+ca}{(b+c)^2} \geqslant \frac{10a^3+11(b+c)a^2+8(b^2+c^2)a-(b+c)(5b^2-13bc+5c^2)}{12[ab(a+b)+bc(b+c)+ca(c+a)]}.\]
+Indeed, let
+\[X = 10a^3+11(b+c)a^2+8(b^2+c^2)a-(b+c)(5b^2-13bc+5c^2),\]
+then
+\[12(ab+bc+ca) \sum bc(b+c) - X(b+c)^2 = 2a[b^2+c^2-a(b+c)]^2 + (b-c)^2 \cdot f(a),\]
+with
+\[f(a) = 5(b+c)a^2 - 2(5b^2+6bc+5c^2)a + (b+c)(5b^2+7bc+5c^2).\]
+The quadratic polynomial $f(a) \ge 0$ holds because its discriminant is
+\[\begin{aligned} 
+\Delta_{a} &= (5b^2+6bc+5c^2)^2 - 5(b+c) \cdot (b+c)(5b^2+7bc+5c^2) \\
+& = - bc(25b^2+34bc+25c^2) \leqslant 0.
+\end{aligned}\]
+The estimate is proved.
+\end{proof}
+
+\begin{note}
+Another result can be proved similarly
+\[\frac{ab+bc+ca}{(b+c)^2} \ge \frac{4a^3+26a^2(b+c)-(4b^2-27bc+4c^2)a-(b+c)(2b^2-7bc+2c^2)}{12(a+b+c)(ab+bc+ca)}.\]
+\end{note}
+
+%\begin{proof}[\cmss\problemColor Solution 3] 
+%(\textit{Nguyen Van Huyen}) Since
+%\[\sum \frac{4a^3+26a^2(b+c)-(4b^2-27bc+4c^2)a-(b+c)(2b^2-7bc+2c^2)}{12(a+b+c)(ab+bc+ca)} = \frac{9}{4}.\]
+%We have the following estimate
+%\[\frac{ab+bc+ca}{(b+c)^2} \ge \frac{4a^3+26a^2(b+c)-(4b^2-27bc+4c^2)a-(b+c)(2b^2-7bc+2c^2)}{12(a+b+c)(ab+bc+ca)}.\]
+%Indeed, let
+%\[X = 4a^3+26a^2(b+c)-(4b^2-27bc+4c^2)a-(b+c)(2b^2-7bc+2c^2),\]
+%then
+%\[12(a+b+c)(ab+bc+ca)^2 - X(b+c)^2 = 8a[b^2+c^2-a(b+c)]^2 + (b-c)^2 \cdot f(a),\]
+%for
+%\[f(a) = 2(b+c)a^2-(4b^2+3bc+4c^2)a+(b+c)(2b^2+bc+2c^2).\]
+%The quadratic polynomial $f(a) \ge 0$ holds because its discriminant is
+%\[\begin{aligned} 
+%\Delta_{a} &= (4b^2+3bc+4c^2)^2 - 4 \cdot 2(b+c) \cdot (b+c)(2b^2+bc+2c^2) \\
+%& = -bc(16b^2+7bc+16c^2) \leqslant 0.
+%\end{aligned}\]
+%The estimate is proved.
+%\end{proof}
+
+%Lời giải 1. (Võ Quốc Bá Cẩn) Không mất tính tổng quát, giả sử $latex a \geqslant b \geqslant c.$ Ta có đánh giá
+%$latex \displaystyle \frac {1}{(a + b)^2} + \frac {1}{(a + c)^2} + \frac {1}{(b + c)^2} \geqslant \frac {1}{4ab} + \frac {2}{(a + c)(b + c)}.$
+%Thật vậy, bất đẳng thức này tương đương với
+%$latex \displaystyle \frac {1}{(a + c)^2} + \frac {1}{(b + c)^2} - \frac {2}{(a + c)(b + c)} \geqslant \frac {1}{4ab} - \frac {1}{(a + b)^2},$
+%hay là
+%$latex \displaystyle \frac {(a - b)^2}{(a + c)^2(b + c)^2} \geqslant \frac {(a - b)^2}{4ab(a + b)^2}.$
+%Hiển nhiên đúng vì $latex 4ab \geqslant 4b^2 \geqslant (b + c)^2,$ và $latex (a + b)^2 \geqslant (a + c)^2.$
+%Quay trở lại bài toán, sử dụng đánh giá ta đưa bài toán về chứng minh
+%$latex \displaystyle (ab + bc + ca)\left[\frac {1}{4ab} + \frac {2}{(a + c)(b + c)}\right] \geqslant \frac {9}{4}.$
+%Từ
+%$latex \displaystyle \frac {ab + bc + ca}{4ab} = \frac {1}{4} + \frac {c(a + b)}{4ab}, \quad \frac {2(ab + bc + ca)}{(a + c)(b + c)} = 2 - \frac {2c^2}{(a + c)(b + c)},$
+%Ta có thể viết bất đẳng thức trên thành
+%$latex \displaystyle \frac {c(a + b)}{4ab} \geqslant \frac {2c^2}{(a + c)(b + c)},$
+%hay là
+%$latex (a + b)(b + c)(c + a) \geqslant 8abc.$
+%Hiển nhiên đúng theo bất đẳng thức AM-GM, nên ta có điều phải chứng minh.
+
+\end{document}

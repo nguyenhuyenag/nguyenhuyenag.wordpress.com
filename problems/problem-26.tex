@@ -1,0 +1,61 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../../template/standard_pkgs}
+\input{../../template/common}
+\input{format}
+
+\theoremstyle{plain}
+\newtheorem*{pro}{\cmss\problemColor Problem}
+
+\addto\captionsvietnam{\renewcommand{\proofname}{\cmss\problemColor Proof}}
+
+\begin{document}
+\begin{pro}
+Let $a,\,b,\,c$ be non-negative real numbers. Prove that
+\begin{equation}\label{eq0}
+a^3+b^3+c^3+2(ab^2+bc^2+ca^2) \geqslant 3(a^2b+b^2c+c^2a).
+\end{equation}
+\end{pro}
+
+\begin{proof}[\cmss\problemColor Solution 1]
+Note that
+\[a^2b+b^2c+c^2a-3abc = c(a-b)^2 + a(a-c)(b-c),\]
+\[a^3+b^3+c^3-3abc=(a+b+c)[(a-b)^2+(a-c)(b-c)].\]
+Write the inequality \eqref{eq0} as
+\[a^3+b^3+c^3-3abc+2(ab^2+bc^2+ca^2-3abc) \ge 3(a^2b+b^2c+c^2a-3abc).\]
+or
+\[(a+b)(a-b)^2 + (c+3b-2a)(a-c)(b-c) \geqslant 0.\]
+Suppose \( c \) is between \( a \) and \( b \), then $(a-c)(c-b) \ge 0.$ By the AM-GM inequality, we have
+$$(a-b)^2=[(a-c)+(c-b)]^2 \ge 4(a-c)(c-b).$$
+So, we need to show that
+\[4(a+b)(a-c)(c-b) + (c+3b-2a)(a-c)(b-c) \geqslant 0.\]
+or
+\begin{equation}\label{eq1}
+(a-c)(c-b)(6a+b-c) \ge 0.
+\end{equation} 
+Now
+\begin{enumerate}[\textbullet]
+\item  If $a \geqslant c,$ then $6a+b-c = (a-c)+5a+b\ge0.$
+\item  If $b \geqslant c,$ then $6a+b-c = (b-c)+6a \ge 0.$
+\end{enumerate}
+Therefore, \eqref{eq1} is always true. The proof is complete.
+\end{proof}
+
+{\cmss\problemColor Note.} In addition, we also have
+\[c(6a+b-c) = (a-c)(c-b)+a(b+5c) \ge 0.\]
+
+\begin{proof}[\cmss\problemColor Solution 2] 
+Suppose $c=\min\{a,b,c\}.$ Let 
+$a=x+c,$ $b=y+c $ for $x,y \ge 0.$ 
+
+The inequality \eqref{eq0} become
+\begin{equation}\label{eq2}
+2(x^2-xy+y^2)c+x^3-3x^2y+2xy^2+y^3 \geqslant 0.
+\end{equation}
+But
+\[x^3-3x^2y+2xy^2+y^3 = x(x-2y)^2+y(x-y)^2 \ge 0.\]
+Therefore, \eqref{eq2} is always true.
+\end{proof}
+
+
+\end{document}

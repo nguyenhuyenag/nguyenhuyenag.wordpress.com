@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./tex/standard_pkgs}
+\input{./tex/common}
+\input{./tex/format}
+
+\begin{document}
+
+\begin{pro}
+Given a triangle $ABC$ with side lengths $BC=a,\ CA=b,\ AB=c$ and median lengths $ m_a,m_b,m_c$ drawn from vertices $A,\ B $ and $ C$ respectively
+\begin{enumerate} [(1)]
+\item Prove that
+% (\href{https://artofproblemsolving.com/community/c6h3390104}{Link}) 
+\begin{equation}\label{eq1}
+(a+b+c)(a^2b^2+b^2c^2+c^2a^2) \geqslant 3abc(a^2+b^2+c^2).
+\end{equation}
+\begin{flushright}(Nguyen Van Huyen)\end{flushright}
+\item Prove that
+%(\href{https://artofproblemsolving.com/community/c6h458370p2578524}{Link}) 
+\[\frac{m_am_b}{m_c}+\frac{m_cm_a}{m_b}+\frac{m_bm_c}{m_a} \ge \frac{3(m_a^2+m_b^2+m_c^2)}{m_a+m_b+m_c}.\]
+\begin{flushright}(Nguyen Van Quy)\end{flushright}
+\end{enumerate}
+\end{pro}
+
+{\cmss\problemColor Solution (1).}
+
+\begin{proof}[\cmss First Proof] (\textit{Nguyen Van Huyen}) Note that
+\[3abc(a^2+b^2+c^2) - 3abc(ab+bc+ca) = 3abc[(a-b)^2+(a-c)(b-c)],\]
+and
+\[\begin{aligned}
+(a+b+c)&(a^2b^2+b^2c^2+c^2a^2) - 3abc(ab+bc+ca) 
+\\& = [c^3+(a^2+3ab+b^2)c-ab(a+b)](a-b)^2+(a^3+b^3+2abc)(a-c)(b-c).
+\end{aligned}\]
+Thus, the inequality \eqref{eq1} can be written as
+\[\left[c^3+(a^2+b^2)c-ab(a+b)\right](a-b)^2+(a^3+b^3-abc)(a-c)(b-c) \geqslant 0.\]
+Asumme that $c= \max\{a,b,c\},$ then
+\[(a^2+b^2)c-ab(a+b) \geqslant 2abc-ab(a+b) = ab(2c-a-b) \geqslant 0,\]
+and
+\[\begin{aligned}
+a^3+b^3-abc &= [a^3+b^3-ab(a+b)] + [ab(a+b)-abc] \\&
+= (a+b)(a-b)^2+ab(a+b-c) \geqslant 0.
+\end{aligned}\]
+The equality holds for $a=b=c.$ The proof is completed.
+\end{proof}
+
+\begin{proof}[\cmss Second Proof] (\textit{Pham Huu Hoai}) The inequality is equivalent to each of the following inequalities 
+\[\frac{ab}{c}+\frac{bc}{a}+\frac{ca}{b} \ge \frac{3(a^2+b^2+c^2)}{a+b+c},\]
+\[\left(\frac{ab}{c}-a-b+c\right) + \left(\frac{bc}{a}+\frac{ca}{b}-2c\right) \ge \frac{3(a^2+b^2+c^2)}{a+b+c}-(a+b+c),\]
+%$$ \frac{ab}{c}-a-b+c+\frac{bc}{a}-b-c+a+\frac{ca}{b}-c-a+b \ge \frac{3(a^2+b^2+c^2)}{a+b+c}-(a+b+c),$$
+$$ \frac{(a-c)(b-c)}{c}+\frac{c(a-b)^2}{ab}\ge \frac{2(a-b)^2+2(a-c)(b-c)}{a+b+c},$$
+$$ \left(\frac{c}{ab}-\frac{2}{a+b+c}\right)(a-b)^2+\left(\frac{1}{c}-\frac{2}{a+b+c}\right)(a-c)(b-c) \ge 0.$$
+Suppose that $c = \max \{a,b,c\},$ then
+\[a+b+c-2c = a+b-c > 0,\]
+and
+\[c(a+b+c)-2ab = a(c-b) + b(c-a)  +c^2 > 0.\]
+The proof is completed.
+\end{proof}
+
+%\begin{proof}[\cmss Third Proof] (\textit{Dinh Binh Duong}) We will prove the stronger inequality
+%$$\frac{ab}{c}+\frac{bc}{a}+\frac{ca}{b} \ge \frac{3(a^2+b^2+c^2)}{a+b+c} + \frac{(a+b-c)(b+c-a)(c+a-b)(a^2+b^2+c^2-ab-bc-ca)}{4abc(a+b+c)}.$$
+%After expanding, this inequality becomes
+%\[(a+b+c)*(a^4-3*a^3*b-3*a^3*c+8*a^2*b^2-3*a^2*b*c+8*a^2*c^2-3*a*b^3-3*a*b^2*c-3*a*b*c^2-3*a*c^3+b^4-3*b^3*c+8*b^2*c^2-3*b*c^3+c^4)\]
+%\[(a+b+c)\left[(1/2)*(a-b)^2*(a+b-3*c)^2+(1/2)*(b-c)^2*(-b-c+3*a)^2+(1/2)*(a-c)^2*(c+a-3*b)^2\right]\]
+%This is the Schur’s inequality of degree three.
+%\end{proof}
+
+\begin{proof}[\cmss\problemColor Solution (2)]
+We will prove that $m_a, \ m_b, \ m_c$ are also three sides of a triangle. 
+
+Indeed, we will prove that
+\[m_a + m_b \geqslant m_c.\]
+Which is equivalent to
+\[\sqrt{2(b^2+c^2)-a^2} +\sqrt{2(c^2+a^2)-b^2}\geqslant \sqrt{2(a^2+b^2)-c^2},\]
+or
+\[2\sqrt{[2(b^2+c^2)-a^2][2(c^2+a^2)-b^2]} \ge a^2+b^2-5c^2.\]
+It remains to show that
+\[4[2(b^2+c^2)-a^2][2(c^2+a^2)-b^2] \ge (a^2+b^2-5c^2)^2.\]
+This is true because
+\[\begin{aligned}
+4[2(b^2+c^2) &- a^2][2(c^2+a^2)-b^2] - (a^2+b^2-5c^2)^2 \\
+& = 9 \left[2(a^2b^2+b^2c^2+c^2a^2) - a^4 - b^4 - c^4\right] \\ 
+& = 9(a+b+c)(a+b-c)(b+c-a)(c+a-b) \ge 0.
+\end{aligned}\]
+Now, from \eqref{eq1} we get
+\[\frac{ab}{c}+\frac{bc}{a}+\frac{ca}{b} \ge \frac{3(a^2+b^2+c^2)}{a+b+c}.\]
+We replace $(a, \ b, \ c) \to (m_a,\ m_b,\ m_c)$ and the inequality becomes
+\[\frac{m_am_b}{m_c}+\frac{m_cm_a}{m_b}+\frac{m_bm_c}{m_a} \ge \frac{3(m_a^2+m_b^2+m_c^2)}{m_a+m_b+m_c}.\]
+The proof is completed.
+\end{proof}
+\end{document}

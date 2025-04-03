@@ -1,0 +1,30 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./tex/standard_pkgs}
+\input{./tex/common}
+\input{./tex/format}
+
+\begin{document}
+
+\begin{pro}
+If $a, \ b, \ c$ be positive numbers, then
+\[\frac{a^2}{(a+b)^2}+\frac{b^2}{(b+c)^2}+\frac{c^2}{(c+a)^2} \geqslant \frac{3}{4}.\]
+\end{pro}
+
+\begin{proof}[\cmss\problemColor Solution] (\textit{Nguyen Van Huyen})
+We have
+\[4a^2(a + b + c)^2 - (4a^2 - b^2 - bc + 7ca)(a + b)^2 = c(a+b)(a-b)^2 + (b^2+ab-2ca)^2 \ge 0,\]
+thus
+\[\frac{a^2}{(a+b)^2} \geqslant \frac{4a^2-b^2-bc+7ca}{4(a+b+c)^2}.\]
+Which gives
+\[\sum\frac{a^2}{(a+b)^2} \geqslant \sum\frac{4a^2-b^2-bc+7ca}{4(a+b+c)^2} = \frac{3}{4}.\]
+The proof is completed.
+\end{proof}
+
+
+
+
+
+
+
+\end{document}

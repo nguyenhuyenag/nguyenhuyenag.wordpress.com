@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+\begin{pro_no_count}
+Let $a, \ b, \ c$ be non-negative real numbers. Prove that
+$$\frac{b+c}{\sqrt{a^{2}+bc}} + \frac{c+a}{\sqrt{b^{2}+ca}} + \frac{a+b}{\sqrt{c^{2}+ab}} \geqslant 4.$$
+\begin{flushright}(Pham Kim Hung)\end{flushright}
+\end{pro_no_count}
+
+\begin{proof}[\cmss\problemColor Solution 1]
+Using the Holder inequality, we obtain
+\[\left(\sum \frac{b+c}{\sqrt{a^{2}+bc}}\right)^2 \sum (a^{2}+bc)(b+c) \ge \left[\sum (b+c)\right]^3 = 8(a+b+c)^3.\]
+Therefore, it suffices to show that
+\[(a+b+c)^3 \ge 2\sum (a^{2}+bc)(b+c),\]
+or
+\[a^3+b^3+c^3+6abc \ge \sum ab(a+b).\]
+From Schur’s inequality
+\[a^3+b^3+c^3+6abc \geqslant a^3+b^3+c^3+3abc \ge \sum ab(a+b).\]
+The equality holds for $a=b,\,c=0$  (or any cyclic permutation).
+\end{proof}
+
+\begin{proof}[\cmss\problemColor Solution 2]
+(\textit{Nguyen Van Huyen}) We have
+\[\begin{aligned}
+(b+c)^2&(a^2+b^2+c^2)^2-4(a^2+bc)(b^2+c^2)^2 \\
+& = (b+c)^2a^4 + (b^2+c^2)^2(b-c)^2 - 2a^2(b^2+c^2)(b-c)^2 \\
+%& = \frac{[a^2(b+c)^2-(b^2+c^2)(b-c)^2]^2+4bc(b-c)^2(b^2+c^2)^2}{(b+c)^2} \geqslant 0.
+\end{aligned}\]
+Since $b+c \ge |b-c|,$ using the AM-GM inequality, we have
+\[\begin{aligned} 
+(b+c)^2a^4 + (b^2+c^2)^2(b-c)^2 & \ge 2\sqrt{(b+c)^2a^4 \cdot (b^2+c^2)^2(b-c)^2} \\
+& = 2a^2(b^2+c^2)(b+c)|b-c| \\
+& \geqslant 2a^2(b^2+c^2)(b-c)^2.
+\end{aligned}\]
+Which gives
+\[(b+c)^2(a^2+b^2+c^2)^2 \geqslant 4(a^2+bc)(b^2+c^2)^2,\]
+or
+\[\frac{b+c}{\sqrt{a^{2}+bc}} \geqslant \frac{2(b^2+c^2)}{a^2+b^2+c^2}.\]
+Thus
+\[\sum \frac{b+c}{\sqrt{a^{2}+bc}} \geqslant 2 \sum \frac{b^2+c^2}{a^2+b^2+c^2} = 4.\]
+\end{proof}
+
+\newpage 
+
+\begin{proof}[\cmss\problemColor Solution 3]
+(\textit{Pham Huu Hoai}) Assume that $c=\min\{a,b,c\}.$ Using the AM-GM inequality, we have
+\[\begin{aligned}
+\frac{b+c}{\sqrt{a^{2}+bc}} + \frac{c+a}{\sqrt{b^{2}+ca}} & =\frac{b^2+ca+b(a+c)}{(a+b)\sqrt{a^2+bc}}+\frac{a^2+bc+a(b+c)}{(a+b)\sqrt{b^2+ca}} \\
+&\ge \frac{2\sqrt{(b^2+ca) \cdot b(a+c)}}{(a+b)\sqrt{a^2+bc}}+\frac{2\sqrt{(a^2+bc) \cdot a(b+c)}}{(a+b)\sqrt{b^2+ca}} \\
+& \geqslant \frac{4\sqrt[4]{ab(a+c)(b+c)}}{a+b} \\
+& = \frac{4\sqrt[4]{a^2b^2+abc(a+b)+abc^2}}{a+b} \\
+& \ge \frac{4\sqrt[4]{a^2b^2+2abc^2+c^4}}{a+b} \\
+& = \frac{4\sqrt{c^2+ab}}{a+b}.
+\end{aligned}\]
+Therefore
+%$\bullet LHS=\frac{b^2+ca+b(a+c)}{(a+b)\sqrt{a^2+bc}}+\frac{a^2+bc+a(b+c)}{(a+b)\sqrt{b^2+ca}}+\frac{a+b}{\sqrt{c^2+ab}}\ge \frac{2\sqrt{(b^2+ca)b(a+c)}}{(a+b)\sqrt{a^2+bc}}+\frac{2\sqrt{(a^2+bc)a(b+c)}}{(a+b)\sqrt{b^2+ca}}+\frac{a+b}{\sqrt{c^2+ab}}$
+%$\bullet LHS \ge \frac{4\sqrt[4]{ab(a+c)(b+c)}}{a+b}+\frac{a+b}{\sqrt{c^2+ab}}=\frac{4\sqrt[4]{a^2b^2+abc(a+b)+abc^2}}{a+b}+\frac{a+b}{\sqrt{c^2+ab}}$
+%$\bullet LHS \ge \frac{4\sqrt[4]{a^2b^2+2abc^2+c^4}}{a+b}+\frac{a+b}{\sqrt{c^2+ab}}=\frac{4\sqrt{c^2+ab}}{a+b}+\frac{a+b}{\sqrt{c^2+ab}} \ge 4.$
+\[\frac{b+c}{\sqrt{a^{2}+bc}} + \frac{c+a}{\sqrt{b^{2}+ca}} + \frac{a+b}{\sqrt{c^{2}+ab}} \ge \frac{4\sqrt{c^2+ab}}{a+b}+\frac{a+b}{\sqrt{c^{2}+ab}} \ge 4.\]
+\end{proof}
+
+
+
+\end{document}

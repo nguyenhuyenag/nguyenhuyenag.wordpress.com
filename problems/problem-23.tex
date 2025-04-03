@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../../template/standard_pkgs}
+\input{../../template/common}
+\input{format}
+
+\begin{document}
+\begin{bt}
+(Đỗ Hữu Đức Thịnh) Cho ba số thực không âm $a,\,b,\,c$ thỏa mãn điều kiện $ab+bc+ca>0.$ Chứng minh rằng
+\begin{equation}\label{eq1}
+(ab+bc+ca)\left[\dfrac{1}{(a+b)^2}+\dfrac{1}{(b+c)^2}+\dfrac{1}{(c+a)^2}\right] \geq \frac{(S+3)^2}{4(1-S)},
+\end{equation}
+với $$S=\dfrac{(a-b)^2(b-c)^2(c-a)^2}{(a+b)^2(b+c)^2(c+a)^2}.$$
+\end{bt}
+
+\begin{proof} (\textit{Nguyễn Văn Huyện}) Vì
+\[(ab+bc+ca) \sum \frac{1}{(a+b)^2} = \frac{ab(a^2-b^2)^2+bc(b^2-c^2)^2+ca(c^2-a^2)^2}{(a+b)^2(b+c)^2(c+a)^2} + \frac{9-S}{4},\]
+nên \eqref{eq1} tương đương với
+\[\frac{ab(a^2-b^2)^2+bc(b^2-c^2)^2+ca(c^2-a^2)^2}{(a+b)^2(b+c)^2(c+a)^2} + \frac{9-S}{4} \geqslant \frac{(S+3)^2}{4(1-S)},\]
+hay là
+\begin{equation}\label{eq2}
+ab(a^2-b^2)^2+bc(b^2-c^2)^2+ca(c^2-a^2)^2 \ge \frac{4S(a+b)^2(b+c)^2(c+a)^2}{1-S}.
+\end{equation}
+Nếu $abc=0$ thì \eqref{eq2} trở thành đẳng thức.
+
+Nếu $abc > 0,$ giả sử $a \ge b \ge c$ và áp dụng bất đẳng thức Cauchy-Schwarz, ta có 
+\[bc(b^2-c^2)^2+ca(c^2-a^2)^2 \ge \frac{(b^2-c^2+c^2-a^2)^2}{\frac{1}{bc}+\frac{1}{ca}} = abc(a+b)(a-b)^2,\]
+suy ra
+\[\sum ab(a^2-b^2)^2 \geqslant ab(a+b)(a+b+c)(a-b)^2 \ge ab(a+b)^2(a-b)^2.\]
+Do đó ta cần chứng minh
+\[ab(a+b)^2(a-b)^2 \geq \frac{4S(a+b)^2(b+c)^2(c+a)^2}{1-S}.\]
+Thật vậy, từ đánh giá $(a-c)^2(b-c)^2 \leqslant a^2b^2,$ ta được
+\[\frac{4S(a+b)^2(b+c)^2(c+a)^2}{1-S} = \frac{4(a-b)^2(b-c)^2(c-a)^2(a+b)^2(b+c)^2(c+a)^2}{(a+b)^2(b+c)^2(c+a)^2-(a-b)^2(b-c)^2(c-a)^2}\]
+\[\leqslant \frac{4a^2b^2(a-b)^2(a+b)^2(b+c)^2(c+a)^2}{(a+b)^2(b+c)^2(c+a)^2-a^2b^2(a-b)^2}.\]
+Bài toán quy về chứng minh
+\[ab(a+b)^2(a-b)^2 \ge \frac{4a^2b^2(a-b)^2(a+b)^2(b+c)^2(c+a)^2}{(a+b)^2(b+c)^2(c+a)^2-a^2b^2(a-b)^2},\]
+hay là
+\[1 \ge \frac{4ab(b+c)^2(c+a)^2}{(a+b)^2(b+c)^2(c+a)^2-a^2b^2(a-b)^2},\]
+% \[(a+b)^2(b+c)^2(c+a)^2-a^2b^2(a-b)^2 \ge 4ab(b+c)^2(c+a)^2,\]
+tương đương với
+\[(a+b)^2(b+c)^2(c+a)^2 - 4ab(b+c)^2(c+a)^2 \ge a^2b^2(a-b)^2,\]
+hoặc
+\[(c+a)^2(b+c)^2(a-b)^2 \ge a^2b^2(a-b)^2.\]
+Hiển nhiên đúng vì $(c+a)^2 \ge a^2$ và $(b+c)^2 \ge b^2.$
+
+Đẳng thức xảy ra khi và chỉ khi $abc=0$ hoặc $a=b=c$ hoặc $a=b,\,c=0$ cùng các hoán vị tương ứng. 
+\end{proof}
+%\begin{nhanxet}
+%Đặt
+%\[F = (ab+bc+ca)\left[\dfrac{1}{(a+b)^2}+\dfrac{1}{(b+c)^2}+\dfrac{1}{(c+a)^2}\right].\]
+%Từ bài này, chúng ta có thể suy ra một số kết quả sau
+%\[F \geq \frac{9}{4} + \frac{15}{4} \cdot \frac{(a-b)^2(b-c)^2(c-a)^2}{(a+b)^2(b+c)^2(c+a)^2}.\]
+%()
+%\end{nhanxet}
+\end{document}

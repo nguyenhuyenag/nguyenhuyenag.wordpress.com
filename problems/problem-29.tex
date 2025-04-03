@@ -1,0 +1,46 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../../template/standard_pkgs}
+\input{../../template/common}
+\input{format}
+
+\theoremstyle{plain}
+\newtheorem*{pro}{\cmss\problemColor Problem}
+
+\addto\captionsvietnam{\renewcommand{\proofname}{\cmss\problemColor Proof}}
+
+\begin{document}
+
+\begin{pro}
+Given any \textbf{real} numbers, such that
+\[D = xa^2 + yb^2 + zc^2 + abc - 4 xyz \le 0,\]
+and at least one condition below is true
+\[x > 0, \quad 4xy \ge c^2, \quad \mathbf{or} \quad y > 0, \quad 4yz \ge a^2, \quad \mathbf{or} \quad z > 0, \quad 4zx \ge b^2.\]
+Prove that
+\begin{equation}\label{eq15}
+xu^2 + yv^2 + zw^2  \ge a \cdot vw + b \cdot wu + c \cdot uv.
+\end{equation}
+\begin{flushright}(Nguyen Van Huyen)\end{flushright}
+\end{pro}
+
+\begin{proof} % [\cmss Solution]
+(\textit{Nguyen Van Huyen}) Assume that $x > 0, \; 4 xy \ge c^2.$ Denote
+\[f(u) = xu^2 - (bw+cv)u + yv^2-avw+zw^2.\]
+The quadratic $f(u)$ has the discriminant
+\[\begin{aligned}
+\Delta_{u} &= (bw+cv)^2 - 4x(yv^2-avw+zw^2) \\
+& = -\left[(4xy - c^2)v^2 - 2w(2ax+bc)v + w^2(4zx - b^2)\right] \\
+& = - f(v).
+\end{aligned}\]
+The quadratic $f(v)$ has the discriminant
+\[\begin{aligned}
+\Delta_v & = [w(2ax+bc)]^2 - (4xy - c^2) \cdot w^2(4zx - b^2) \\
+& = 4xw^2(xa^2 + yb^2 + zc^2 + abc - 4 xyz) \le 0.
+\end{aligned}\]
+Since $4xy - c^2 \ge 0$ and $\Delta_v \le 0,$ we get $f(v) \ge 0.$ Therefore $\Delta_u \le 0,$ which gives $f(u) \ge 0.$
+
+The proof is completed.
+\end{proof}
+
+
+\end{document}

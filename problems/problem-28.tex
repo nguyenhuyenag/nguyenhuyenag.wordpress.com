@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}[Pham Kim Hung]
+% https://artofproblemsolving.com/community/c6h57558
+Let $a,\,b,\,c$ be non-negative numbers satisfying $a+b+c=2.$ Prove that
+\begin{equation}\label{eq9}
+\frac{bc}{a^2+1} + \frac{ca}{b^2+1} + \frac{ab}{c^2+1} \le 1.
+\end{equation}
+\end{pro_no_count}
+
+\begin{proof}[\cmss\problemColor Solution 1]
+(\textit{Vo Quoc Ba Can, Nguyen Van Huyen}) We have the following estimate
+\begin{equation}\label{eq1}
+\frac{bc}{a^2+1} \le \frac{bc(b+c)}{ab(a+b)+bc(b+c)+ca(c+a)}.
+\end{equation} 
+If $bc = 0,$ then \eqref{eq1} is obvious.
+
+If $bc >0,$ dividing both sides by $bc$ and homogenizing the inequality becomes
+\[[4a^2+(a+b+c)^2](b+c) \geq  4[a b(a+b)+b c(b+c)+c a(c+a)].\]
+The inequality is quadratic in $a,$ so we can rewrite it as
+\[(b+c)a^2-2a(b-c)^2+(b+c)(b-c)^2 \ge 0,\]
+or
+\[(b+c)[a^2+(b-c)^2] \ge 2a(b-c)^2.\]
+Since $b+c \ge |b-c|,$ using the AM-GM inequality, we have
+\[(b+c)[a^2+(b-c)^2] \ge (b+c) \cdot  2a \cdot |b-c| = 2a(b+c)|b-c| \ge 2a(b-c)^2.\]
+Thus
+\[\sum \frac{bc}{a^2+1} \le \sum \frac{bc(b+c)}{ab(a+b)+bc(b+c)+ca(c+a)} = 2.\]
+The equality holds for $a=0, \ b = c = 1$ (or any cyclic permutation).
+\end{proof}
+
+\begin{proof}[\cmss\problemColor Solution 2]
+(\textit{Nguyen Van Huyen}) We have the following estimate
+\[\frac{bc}{a^2+1} \leqslant \frac{a^2+b^2+c^2-2a(b+c)+6bc}{3(a^2+b^2+c^2)+2(ab+bc+ca)}.\]
+Indeed, since
+\[[a^2+b^2+c^2-2a(b+c)+6bc]\left[a^2+\frac{1}{4}(a+b+c)^2\right] - bc[3(a^2+b^2+c^2)+2(ab+bc+ca)]\]
+\[=a^2(b+c-a)^2+\frac{1}{4}(a+b-c)^2(c+a-b)^2 \geqslant 0.\]
+We have
+\[\frac{bc}{a^2+\frac{(a+b+c)^2}{4}} \leqslant \frac{a^2+b^2+c^2-2a(b+c)+6bc}{3(a^2+b^2+c^2)+2(ab+bc+ca)},\]
+or
+\[\frac{bc}{a^2+1} \leqslant \frac{a^2+b^2+c^2-2a(b+c)+6bc}{3(a^2+b^2+c^2)+2(ab+bc+ca)}.\]
+% Thus
+% \[\sum \frac{bc}{a^2+1} \le \sum \frac{a^2+b^2+c^2-2a(b+c)+6bc}{3(a^2+b^2+c^2)+2(ab+bc+ca)} = 1.\]
+\end{proof}
+
+\begin{note}
+From this solution, we see that \eqref{eq9} is always true for all \textbf{\textit{real}} numbers.
+\end{note}
+
+\end{document}

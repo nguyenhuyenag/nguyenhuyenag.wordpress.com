@@ -1,0 +1,59 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../template/standard_pkgs}
+\input{../template/common}
+\input{format}
+
+\begin{document}
+\begin{bt}
+Cho ba số thực dương $a,\,b,\,c$ thỏa mãn $ab+bc+ca=3.$ Chứng minh rằng
+\begin{equation}\label{eq0}
+\frac{1}{\sqrt{a^2+3}}+\frac{1}{\sqrt{b^2+3}}+\frac{1}{\sqrt{c^2+3}} \geqslant \frac{9}{3+a+b+c}.
+\end{equation}
+\vspace{-1.3cm}
+\begin{flushright}(Nguyễn Văn Quý)\end{flushright}
+\end{bt}
+
+\begin{proof} (\textit{Nguyễn Văn Huyện}) Ta viết \eqref{eq0} lại dưới dạng thuần nhất
+\begin{equation}\label{eq1}
+\sqrt{a+b}+\sqrt{b+c}+\sqrt{c+a} \geq \frac{9\sqrt{(a+b)(b+c)(c+a)}}{a+b+c+\sqrt{3(ab+bc+ca)}}.
+\end{equation}
+Đặt $x=\sqrt{b+c},$ $y = \sqrt{c+a}$ và $z = \sqrt{a+b}$ thì $x,\,y,\,z$ là độ dài ba cạnh của tam giác nhọn. Bất đẳng thức \eqref{eq1} trở thành
+\[x+y+z \geqslant \frac{18xyz}{x^2+y^2+z^2+\sqrt{3(x+y+z)(x+y-z)(y+z-x)(z+x-y)}}.\]
+Chuyển sang $pRr$ \footnote{\url{https://wp.me/p7ChCZ-6g}} như sau
+\[2p \geqslant \frac{36pRr}{p^2-4Rr-r^2+2\sqrt 3 pr},\]
+hay là
+\begin{equation}\label{eq2}
+p^2+2\sqrt 3 pr \geqslant r(22R+r).
+\end{equation}
+Bây giờ
+\begin{itemize}
+\item Nếu $R^2-2Rr-r^2 > 0,$ tức $R > (\sqrt 2 + 1)r,$ sử dụng đánh giá $p \geqslant 2R+r,$ ta có
+\[p^2+2\sqrt 3 pr \geqslant (2R+r)^2+2\sqrt 3(2R+r)r \geqslant r(22R+r).\]
+\item Nếu $R^2-2Rr-r^2 \leqslant 0,$ ta viết \eqref{eq2} lại như sau
+\[\big(p+\sqrt 3 r \big)^2 \ge 2r(11R+2r),\]
+hay là
+\[p^2 \ge \big[\sqrt{2r(11R+2r)}- \sqrt 3 r\big]^2.\]
+Sử dụng bất đẳng thức Blundon’s \footnote{\url{https://wp.me/p7ChCZ-3S}}, ta đưa bài toán về chứng minh
+\begin{equation}\label{eq3}
+2R^2+10Rr-r^2-2(R-2r)\sqrt{R(R-2r)} \ge \big[\sqrt{2r(11R+2r)}- \sqrt 3 r\big]^2.
+\end{equation}
+Đặt $k = \frac{R}{r},$ ta có $2 \leqslant k \leqslant 1 + \sqrt{2}.$ Bất đẳng thức \eqref{eq3} trở thành
+\[2k^2+10k-1-2(k-2)\sqrt{k(k-2)} \geqslant \big[\sqrt{2(11k+2)}-\sqrt 3\big]^2,\]
+Khai triển và thu gọn ta được
+\begin{equation}\label{eq4}
+k^2-6k-4+\sqrt{6(11k+2)} \ge (k-2)\sqrt{k(k-2)}.
+\end{equation}
+Dễ thấy vế trái của \eqref{eq4} không âm, tiếp tục bình phương hai vế và thu gọn ta được
+\[14+61k+8k^2-3k^3 \ge (4+6k-k^2)\sqrt{6(11k+2)},\]
+tương đương với
+\[(14+61k+8k^2-3k^3)^2 \ge 6(11k+2)(4+6k-k^2)^2,\]
+hay là
+\[(9k^4-78k^3+130k^2+20k+1)(k-2)^2 \ge 0.\]
+Bất đẳng thức cuối cùng đúng vì
+\[9k^4-78k^3+130k^2+20k+1\]
+\[ = 11k^2(k-2)(12-5k)+2k^2(24k^2-120k+151)+(4k^2-10k-1)^2>0.\]
+\end{itemize}
+Ta có điều phải chứng minh.
+\end{proof}
+\end{document}

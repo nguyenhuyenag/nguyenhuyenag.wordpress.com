@@ -1,0 +1,60 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../template/standard_pkgs}
+\input{../template/common}
+\input{format}
+
+\addto\captionsvietnam{\renewcommand{\proofname}{\cmss\problemColor Proof}}
+
+\begin{document}
+\begin{pro}
+Let $a,\,b,\,c$ are positive real numbers. Prove that
+\[\frac{a^2}{b}+\frac{b^2}{c}+\frac{c^2}{a} \ge 3\sqrt[6]{\frac{a^6+b^6+c^6}{3}}.\]
+\vspace{-1.3cm}
+\begin{flushright}(Vo Quoc Ba Can)\end{flushright}
+\end{pro}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) We write the inequality as
+\[\left(\frac{a^2}{b}+\frac{b^2}{c}+\frac{c^2}{a}\right)^6 \ge 243(a^6+b^6+c^6).\]
+WLOG, suppose $a+b+c=1,$ setting $q=\frac{1-t^2}{3}$ with $0 \le t < 1, $ we have
+\[a^6+b^6+c^6=3r^2+6p(p^2-2q)r+(p^2-2q)(p^4-4p^2q+q^2)\]
+\[=3r^2+2(2t^2+1)r+\frac{1}{27}(2t^2+1)(t^4+10t^2-2).\]
+In addition, from \footnote{\url{https://wp.me/p7ChCZ-ht}}
+\[0 < r \leqslant r_0 = \frac{p(9q-2p^2)+2(p^2-3q)\sqrt{p^2-3q}}{27},\]
+with $q=\frac{1-t^2}{3},$ we get
+\[0 < r \leqslant r_0 = \frac{(1+2t)(1-t)^2}{27}.\]
+so
+\[243(a^6+b^6+c^6) \leqslant 243\left[3r_0^2+2(2t^2+1)r_0+\frac{1}{27}(2t^2+1)(t^4+10t^2-2)\right]\]
+\[=(2t+1)^2(1-t)^4+18(2t^2+1)(2t+1)(1-t)^2+9(2t^2+1)(t^4+10t^2-2)\]
+\[=22t^6+60t^5+90t^4+40t^3+30t^2+1.\]
+We need to prove
+\[\left(\frac{a^2}{b}+\frac{b^2}{c}+\frac{c^2}{a}\right)^6 \ge 22t^6+60t^5+90t^4+40t^3+30t^2+1,\]
+Using the inequality (\textit{lemma $2$}) \footnote{\url{https://wp.me/p7ChCZ-ZS}}
+\[\frac{a^2}{b}+\frac{b^2}{c}+\frac{c^2}{a} \ge \frac{1+2t+5t^2+4t^3-3t^4}{(2t+1)(1-t^2)},\]
+we will show that
+\[\left(\frac{1+2t+5t^2+4t^3-3t^4}{(2t+1)(1-t^2)}\right)^6 \ge 22t^6+60t^5+90t^4+40t^3+30t^2+1,\]
+equivalent to
+\[(1+2t+5t^2+4t^3-3t^4)^6 \ge (22t^6+60t^5+90t^4+40t^3+30t^2+1)(2t+1)^6(1-t^2)^6,\]
+or
+\[t^2 \cdot f(t) \geq 0,\]
+for
+\[\begin{aligned}
+f(t) = & \; 6-4t-48t^2+1620t^3+14278t^4+56208t^5
+\\&+131769t^6+197148t^7+177936t^8+59148t^9-50214t^{10}
+\\&-25188t^{11}+69318t^{12}+40416t^{13}-98436t^{14}-118368t^{15}-1320t^{16}
+\\&+46524t^{17}+25437t^{18}+21748t^{19}-1962t^{20}-13896t^{21}-679t^{22}.
+\end{aligned}\]
+We will show that $f(t) >0.$ Indeed, setting $t = \frac{1}{x+1} < 1$ with $x>0,$ we have
+\[f(t) = f\left(\frac{1}{x+1}\right)  = \frac{g(x)}{(x+1)^{22}},\]
+with
+\[\begin{aligned}
+g(x) = & \; 6x^{22}+128x^{21}+1254x^{20}+9060x^{19}+74508x^{18}+669576x^{17}
+\\&+4975341x^{16}+27941724x^{15}
++119289936x^{14}+395553816x^{13}\\&+1037590858x^{12}+2180644272x^{11}+3699912978x^{10}
++5084994888x^9\\&+5658046506x^8+5075026812x^7+3637113678x^6
++2051467236x^5\\&+888549669x^4+283986324x^3+62710038x^2+8503056x+531441>0.
+\end{aligned}\]
+The proof is completed.
+\end{proof}
+\end{document}

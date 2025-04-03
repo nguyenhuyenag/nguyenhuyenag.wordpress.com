@@ -1,0 +1,40 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/common}
+\input{./template/format}
+
+\begin{document}
+\begin{pro}
+Let $a, b, c$ be three distinct real numbers. Prove that
+\begin{equation}\label{eq0}
+\frac{a^2}{(b-c)^2}+\frac{b^2}{(c-a)^2}+\frac{c^2}{(a-b)^2} \geqslant 2.
+\end{equation} 
+\begin{flushright}(Dao Hai Long)\end{flushright}
+\end{pro}
+
+\begin{proof}[\cmss\problemColor Solution 1]
+(\textit{Nguyen Van Huyen}) Let
+\[x = \frac{a}{b-c}, \quad y = \frac{b}{c-a}, \quad z = \frac{c}{a-b}.\]
+Then $xy+yz+zx=1$. The inequality \eqref{eq0} becomes
+\[x^2+y^2+z^2 \ge 2.\]
+Since $xy+yz+zx=1$, we obtain $z = -\frac{1+xy}{x+y}$. We need to prove
+\[x^2+y^2+\left(\frac{1+xy}{x+y}\right)^2 \ge 2,\]
+or
+\[(x+y)^2+\left(\frac{1+xy}{x+y}\right)^2 \ge 2(1+xy).\]
+Using the AM-GM inequality, we have
+\[(x+y)^2+\left(\frac{1+xy}{x+y}\right)^2 \ge 2\sqrt{(x+y)^2 \cdot \left(\frac{1+xy}{x+y}\right)^2} = 2|1+xy| \ge 2(1+xy).\]
+The proof is completed.
+\end{proof}
+
+\begin{proof}[\cmss\problemColor Solution 2]
+Note that
+\[\sum a(2a-b-c)=2(a^2+b^2+c^2-ab-bc-ca),\]
+and
+\[\sum (b-c)^2(2a-b-c)^2=2(a^2+b^2+c^2-ab-bc-ca)^2.\]
+Therefore, according to the Cauchy-Schwarz inequality, we have
+\[\sum \frac{a^2}{(b-c)^2} \geqslant \frac{\left[a(2a-b-c)+b(2b-c-a)+c(2c-a-b)\right] ^2}{(b-c)^2(2a-b-c)^2+(c-a)^2(2b-c-a)^2+(a-b)^2(2c-a-b)^2}=2.\]
+The proof is completed.
+\end{proof}
+
+\end{document}

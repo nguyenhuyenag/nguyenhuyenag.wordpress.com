@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../../template/standard_pkgs}
+\input{../../template/common}
+\input{format}
+
+\theoremstyle{plain}
+\newtheorem*{pro}{\cmss\problemColor Problem}
+\addto\captionsvietnam{\renewcommand{\proofname}{\cmss\problemColor Proof}}
+
+\begin{document}
+
+\begin{pro}
+Let $a,\,b,\,c$ be positive numbers and $x,\,y,\,z$  be the lengths of the sides of a triangle. Prove that
+\[a(y+z-x)+b(z+x-y)+c(x+y-z) \geq \frac{(x+y+z)(xbc+yca+zab)}{ax+by+cz}.\]
+\begin{flushright}(Nguyen Van Huyen)\end{flushright}
+\end{pro}
+
+\begin{proof}
+% (\textit{Michael Rozenberg}) 
+Using Ravi's substitution, we need to prove that
+\begin{equation}\label{eq1}
+ax+by+cz\geq\frac{(x+y+z)[ab(x+y)+bc(y+z)+ca(z+x)]}{a(y+z)+b(x+z)+c(x+y)},
+\end{equation}
+where $x$, $y$ and $z$ are positive numbers.
+
+We write the inequality \eqref{eq1} as
+$$f(c) = z(x+y)c^2-2z(xa+yb)c+x(y+z)a^2-2xyab+y(x+z)b^2 \geq 0.$$
+The quadratic $f(c)$ has the discriminant
+\[\begin{aligned}
+\Delta_c &= z(xa+yb)^2-(x+y)[x(y+z)a^2-2xyab+y(x+z)b^2] \\&
+= - xy(x+y+z)a^2 - xy(x+y+z)b^2 + 2abxy(x+y+z) \\&
+% = - (x+y+z)[xy(x+y+z)a^2 - xy(x+y+z)b^2 + 2abxy(x+y+z)] \\&
+= - xy(x+y+z)(a-b)^2 \leqslant 0.
+\end{aligned}\]
+%$$[x(x+y)(x+z)-x^2z]a^2+[y(y+x)(y+z)-y^2z]b^2 \geq 2xy(x+y+z)ab,$$
+%Which is true by AM-GM and Cauchy-Schwarz inequality, we have
+%$$(x(x+y)(x+z)-x^2z)a^2+(y(y+x)(y+z)-y^2z)b^2\geq2\sqrt{(x(x+y)(x+z)-x^2z)\cdot(y(y+x)(y+z)-y^2z)}ab=$$
+%$$=2\sqrt{xy(x^2+xy+yz)(xy+y^2+xz)}ab\geq2\sqrt{xy\cdot xy(x+y+z)^2}ab=2xy(x+y+z)ab.$$
+Thus, $f(c) \ge 0.$ The proof is completed.
+\end{proof}
+
+\begin{remark}
+We have
+\[\begin{aligned}
+a(y&+z-x)+b(z+x-y)+c(x+y-z) - \frac{(x+y+z)(xbc+yca+zab)}{ax+by+cz} \\&
+=\frac{[z^2-(x-y)^2](a-b)^2+[x^2-(y-z)^2](b-c)^2+[y^2-(z-x)^2](c-a)^2}{2(ax+by+cz)} \ge 0
+\end{aligned}\]
+\end{remark}
+
+\begin{remark} $\,$
+\begin{enumerate}[(1)]
+\item If $a=y,\,b=z,\,c=x$ the inequality becomes
+\[x^2y(x-y) + y^2z(y-z) + z^2x(z-x) \ge 0.\]
+This is problem $6$ in the IMO $1983.$
+\item If $a=x,\,b=y,\,c=z$ the inequality becomes
+\[2(xy+yz+zx) \geqslant x^2+y^2+z^2+\frac{3xyz(x+y+z)}{x^2+y^2+z^2}.\]
+\end{enumerate}
+\end{remark}
+
+
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/common}
+\input{./template/format}
+
+\begin{document}
+
+% Problem
+\begin{pro}[The S.O.S Theorem]
+Given six \textbf{real} numbers $a, b, c, x, y, z$ satisfying
+$$x+y+z>0, \quad x y+y z+z x \geqslant 0, \quad a+b+c=0.$$
+Prove that
+$$x a^2+y b^2+z c^2 \geqslant 0.$$
+\end{pro}
+
+% Solution
+\begin{proof} (\textit{Nguyen Van Huyen}) 
+Denoting $m=x y+y z+z x,$ we have
+$$
+\begin{gathered}
+2(x+y+z)(x a^2+y b^2+z c^2) \\
+=\sum (2 x^2+m) a^2-2(x y a b+y z b c+z x c a)+(a+b+c) \sum x y(a+b-c) \\
+=\sum (2 x^2+m) a^2-2(x y a b+y z b c+z x c a)
+\end{gathered}
+$$
+We need to prove
+$$(2 x^2+m) a^2+(2 y^2+m) b^2+(2 z^2+m) c^2 \geqslant 2(x y a b+y z b c+z x c a).$$
+This inequality follows from adding this inequality and two similar inequalities
+$$(2x^2+m)a^2 + (2y^2+m)b^2 \ge 4 x y a b.$$
+% It remains to show that
+Indeed, noting that $m \geqslant 0$ and using the AM-GM inequality, we have
+$$(2 x^2+m) a^2+(2 y^2+m) b^2 \geqslant 2(x^2 a^2+y^2 b^2) \geqslant 4xyab.$$
+The proof is completed.
+\end{proof}
+
+\begin{note}
+In addition, with
+\[\sum (ax-by)^2 = (ax-by)^2 + (by-cz)^2 + (cz-ax)^2.\]
+We obtain
+\[2(x+y+z)(xa^2+yb^2+zc^2)\]
+\[= (xy+yz+zx)(a^2+b^2+c^2) + \sum (ax-by)^2 + (a+b+c) \sum xy(a+b-c)\]
+\[\ge (xy+yz+zx)(a^2+b^2+c^2).\]
+This gives
+\[xa^2+yb^2+zc^2 \ge \frac{(xy+yz+zx)(a^2+b^2+c^2)}{2(x+y+z)}.\]
+\end{note}
+
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}[Darij Grinberg]
+Let $a, \ b, \ c$ be non-negative real numbers. Prove that
+\[\frac{a(b+c)}{b^2+bc+c^2}+\frac{b(c+a)}{c^2+ca+a^2}+\frac{c(a+b)}{a^2+ab+b^2} \geqslant 2.\]
+\end{pro_no_count}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) Since
+\[\sum \frac{8a^2 - b^2 - c^2 + 2(ab+bc+ca)}{3(a^2+b^2+c^2+ab+bc+ca)} = 2.\]
+It suffices to prove that
+\begin{equation}\label{eq0}
+\frac{a(b+c)}{b^2+bc+c^2} \geqslant \frac{8a^2 - b^2 - c^2 + 2(ab+bc+ca)}{3(a^2+b^2+c^2+ab+bc+ca)}.
+\end{equation}
+% Indeed, we have
+Indeed, let
+\[X = 8a^2 - b^2 - c^2 + 2(ab+bc+ca).\]
+Then, we have
+%\[3a(b+c)^2 \sum (a^2 + bc) - X(b^2+bc+c^2)=3a[b^2+c^2-a(b+c)]^2 + (b-c)^2 \cdot f(a),\]
+\[(b+c)\left[3a(b+c)\sum (a^2 + bc) - X(b^2+bc+c^2)\right] =3a[b^2+c^2-a(b+c)]^2 + (b-c)^2 \cdot f(a),\]
+with
+\[f(a) = (b+c)a^2 - (2b^2+bc+2c^2)a + (b+c)(b^2+bc+c^2).\]
+% The quadratic polynomial $f(a) \ge 0$ holds because its discriminant is
+Since $f(a)$ is a quadratic polynomial in $a,$ it suffices to check that $f(a) \ge 0,$ which is true because its discriminant is
+\[\begin{aligned} 
+\Delta_{a} &= (2b^2+bc+2c^2)^2 - 4(b+c)^2(b^2+bc+c^2) \\
+& = - bc(8b^2+7bc+8c^2) \leqslant 0.
+\end{aligned}\]
+Thus, the inequality \eqref{eq0} is proved.
+\end{proof}
+
+\end{document}

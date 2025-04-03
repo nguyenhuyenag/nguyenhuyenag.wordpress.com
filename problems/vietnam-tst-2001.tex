@@ -1,0 +1,125 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../template/standard_pkgs}
+\input{../template/common}
+\input{format}
+
+\newtheorem{vande}{\cmss\problemColor Vấn đề}
+
+\begin{document}
+
+\thesischapter[]{CÂU CHUYỆN VỀ NHỮNG BÀI TOÁN (2)}{TRẦN NAM DŨNG}
+
+\begin{newAbstract}{Giới Thiệu}
+Các bài toán sơ cấp, dù không phải là những đóng góp khoa học, vẫn có vai trò và đời sống riêng của nó. Rất nhiều những ý tưởng, cách tiếp cận cho các vấn đề của toán cao cấp xuất phát từ lời giải của các bài toán sơ cấp. Lấy ví dụ nguyên lý Dirichlet rất đơn giản mà học sinh chuyên toán ai cũng biết là một công cụ mạnh trong toán cao cấp, đặc biệt trong tổ hợp.
+
+Trong suốt $15$ năm học toán và sau đó là $25$ năm dạy toán, tôi đã sáng tác khá nhiều những bài toán để dùng cho các cuộc thi, các đợt ôn luyện, trong lớp học, đăng tạp chí THTT và PI. Không phải bài toán nào cũng hay, cũng sâu sắc, cũng đáng nhớ. Đôi khi có những bài toán chỉ làm tròn vai trò của chúng, để kiểm tra, để tuyển chọn. Xong là có thể quên. Nhưng có những bài toán gắn liền một câu chuyện, một bài học thú vị, và còn được dùng để phân tích, mổ xẻ, để dạy.
+
+Tranh thủ thời gian “\textit{tự cách ly}”, tôi sẽ chia sẻ cùng mọi người câu chuyện về một số bài toán. Mở đầu sẽ là một bài toán đã được dùng ở VietNam TST $2001$ (năm mà PGS Lê Anh Vinh, trưởng đoàn Việt Nam dự thi toán quốc tế vài năm gần đây tham gia với tư cách thí sinh), và được khởi đầu từ một bài toán khác từ năm $1995.$
+\end{newAbstract}
+
+Đề chọn đội tuyển Việt Nam dự thi toán quốc tế năm $2001$ có bài toán bất đẳng thức sau:
+
+\begin{bt}[Bài 4, Vietnam TST 2001]
+Cho $a,\,b,\,c$ là các số thực dương thỏa mãn điều kiện $21ab+2bc+8ca \leq 12.$ Tìm giá trị nhỏ nhất của biểu thức $$P(a, b, c)=\frac{1}{a}+\frac{2}{b}+\frac{3}{c}.$$
+\end{bt}
+
+Đây là bài toán khá cơ bản với nhiều cách tiếp cận, ví dụ khử dần các biến số hoặc dùng bất đẳng thức AM-GM có trọng số. Tôi sẽ không nêu lại các cách giải ở đây, chỉ đưa ra một cách giải sử dụng \textit{phương pháp đường mức} mà tôi cho là gọn và đẹp nhất.
+
+Đặt $x=\frac{1}{a},$ $y=\frac{2}{b},$ $z=\frac{3}{c}$ thì $2 xyz =2x+4y+7z$ và ta cần tìm giá trị nhỏ nhất của $$P=x+y+z.$$
+
+Rút $z=\frac{2 x+4 y}{2 x y-7}$ ta có thêm điều kiện $2 x y-7>0 .$ Đặt $m=2x y-7,$ thì
+$$P=x+y+\frac{2 x+4 y}{m}=\left(1+\frac{2}{m}\right) x+\left(1+\frac{4}{m}\right) y $$
+$$\geq 2 \sqrt{\left(1+\frac{2}{m}\right)\left(1+\frac{4}{m}\right) x y}=2 \sqrt{\left(1+\frac{2}{m}\right)\left(1+\frac{4}{m}\right)\left(\frac{m+7}{2}\right)}.$$
+Ta cần đi tìm giá trị nhỏ nhất của $$Q=\left(1+\frac{2}{m}\right)\left(1+\frac{4}{m}\right)\left(\frac{m+7}{2}\right) .$$ Điều này có thể giải quyết trong vòng $1$ nốt nhạc nếu dùng đạo hàm. Nhưng ta có thể có một lời giải hoàn toàn lớp $10$ nếu dùng phương pháp điểm rơi giả định như sau
+
+Ta có
+$$2Q = m+13+\frac{50}{m}+\frac{56}{m^2}.$$
+Giả sử biểu thức này đạt giá trị nhỏ nhất tại $m_0.$ Khi đó ta viết
+$$\quad 2 Q=13+m_{0}\left(\frac{m}{m_{0}}\right)+\frac{50}{m_{0}} \cdot \frac{m_{0}}{m}+\frac{56}{m_{0}^{2}} \cdot \frac{m_{0}^{2}}{m^{2}}.$$
+Bỏ đi hằng số $13$ rồi áp dụng bất đẳng thức AM-GM có trọng số cho các số hạng còn lại ở vế phải, ta có
+\[m_{0} \cdot \frac{m}{m_{0}} +\frac{50}{m_{0}} \cdot \frac{m_{0}}{m}+\frac{56}{m_{0}^{2}} \cdot \frac{m_{0}^{2}}{m^{2}} \geq\left(m_{0}+\frac{50}{m_{0}}+\frac{56}{m_{0}^{2}}\right)\left(\left(\frac{m}{m_{0}}\right)^{m_{0}} \cdot\left(\frac{m_{0}}{m}\right)^{\frac{50}{m_{0}}} \cdot\left(\frac{m_{0}^{2}}{m^{2}}\right)^{\frac{56}{m_{0}^{2}}}\right)^ \frac{1}{m_{0}+\frac{50}{m_{0}}+\frac{55}{m_{0}^{2}}}.\]
+Vế phải sẽ trở thành hằng số nếu như tổng các lũy thừa của $m$ ở đó bằng $0,$ tức là
+$$m_{0}-\frac{50}{m_{0}}-\frac{112}{m_{0}^{2}}=0.$$
+Giải ra ta được ${m}_{0}=8 .$ Như vậy chỉ cần chọn ${m}_{0}=8$ thì bất đẳng thức trên sẽ cho ta
+$$2 Q \geq 13+\left(8+\frac{50}{8}+\frac{56}{8}\right)=\frac{225}{8} .$$
+Từ đó suy ra
+$$P \geq 2 \sqrt{\frac{225}{16}}=\frac{15}{2}.$$
+Dấu bằng xảy ra khi $m = 8,$ tức là $xy = \frac{15}{2},$ ngoài ra còn phải có $\left(1+\frac{2}{m}\right) x=\left(1+\frac{4}{m}\right) y.$
+
+Giải ra ta được $y=\frac{5}{2},\,x=3,\,z=2.$ Kiểm tra lại tất cả đều thỏa mãn.
+
+Bài toán này xuất hiện như thế nào? Ở đâu ra mấy con số $21,$ $2,$ $8,$ $12?$ Hay đúng hơn là ở đâu ra mấy con số $2,$ $2,$ $4,$ $7?$ vì thực ra phương án ban đầu của đề toán là tìm giá trị nhỏ nhất của ${P}={x}+{y}+{z}$ với ${x}, {y}, {z}$ là các số thực dương thỏa mãn điều kiện $2 {xyz}=2 {x}+4 {y}+7 {z}.$
+
+Câu chuyện như thế này. Xuất phát từ một bài toán rất đẹp trong một kỳ thi của Nga:
+
+\textit{Cho $a,$ $b,$ $x,$ $y$ là các số thực dương thỏa mãn điều kiện $xy = ax + by.$ Chứng minh rằng}
+$$x+y \leq(\sqrt{a}+\sqrt{b})^{2}.$$
+Tôi đặt ra một mở rộng rất tự nhiên: \textit{Cho trước các số thực dương $a,$ $b,$ $c$ và $x,$ $y,$ $z$ là các số thực dương thay đổi thỏa mãn điều kiện $xyz = ax+by + cz .$ Tìm giá trị nhỏ nhất của}
+$$P=x+y+z.$$
+Lời giải bài toán gốc rất nhẹ nhàng, chỉ cần kiến thức cấp $2.$ Ví dụ viết $1= \frac{a}{y}+\frac{b}{x}$ rồi dùng bất đẳng thức Cauchy-Schwarz
+$$x+y=(x+y)\left(\frac{b}{x}+\frac{a}{y}\right) \geq(\sqrt{b}+\sqrt{a})^{2} .$$
+Hay là viết $x=\frac{a x}{y}+b, y=a+\frac{b y}{x}$ rồi cộng lại để được
+$$x+y=a+b+\frac{a x}{y}+\frac{b y}{x} \geq a+b+2 \sqrt{a b}=(\sqrt{a}+\sqrt{b})^{2}.$$
+Ý của tôi cũng muốn tìm một lời giải đơn giản như vậy cho bài toán mở rộng. Tuy nhiên, các cố gắng đều thất bại, ngoại trừ một số trường hợp như $a = b = c$ hoặc $a = b$ thôi cũng được. Một cách làm theo kiểu ở trên cho đến một kết quả vui vui là
+$$x+y+z>\sqrt{a+b}+\sqrt{b+c}+\sqrt{c+a}.$$
+Bài toán này tôi đã dùng vài lần và kết quả là nó khá sát thủ. Các bạn thử sức xem sao nhé.
+
+Thử bằng đại số không được, tôi quay sang dùng giải tích, cụ thể là khử biến rồi dùng đạo hàm. Tôi đi đến kết luận là bài toán chỉ có lời giải đẹp trong trường hợp một phương trình bậc $3$ (chính là phương trình tìm điểm rơi) có nghiệm đẹp (hữu tỷ). Cách làm của tôi hồi đó hơi dài nên không trình bày ở đây, tôi trình bày cách tiếp cận bằng \textit{phương pháp đường mức} đã nói đến ở trên (cái này nhiều năm sau, khi tôi viết bài \textit{Giải tích và các bài toán cực trị} thì tôi mới dùng).
+
+Rút $z=\frac{a x+b y}{x y-c}$ và đặt $m=xy-c>0,$ ta được
+$$P=x+y+\frac{a x+b y}{m}=\left(1+\frac{a}{m}\right) x+\left(1+\frac{b}{m}\right) y $$
+$$\geq 2 \sqrt{\left(1+\frac{a}{m}\right)\left(1+\frac{b}{m}\right) x y}=2 \sqrt{\frac{(m+a)(m+b)(m+c)}{m^{2}}}.$$
+Để tìm giá trị nhỏ nhất của $P,$ ta tìm giá trị nhỏ nhất của biểu thức trong căn, tức là của
+$$Q=\frac{(m+a)(m+b)(m+c)}{m^{2}}=m+a+b+c+\frac{a b+b c+c a}{m}+\frac{a b c}{m^{2}}.$$
+Phương trình tìm điểm rơi của $Q$ là một hàm số theo $m$ có dạng
+$$1-\frac{a b+b c+c a}{m^{2}}-\frac{2 a b c}{m^{3}}=0,$$
+hay là
+\begin{equation}\label{eq1}
+m^{3}-(a b+b c+c a) m-2 a b c=0.
+\end{equation}
+Như vậy
+$$P_{\min }=2 \sqrt{\frac{\left(m_{0}+a\right)\left(m_{0}+b\right)\left(m_{0}+c\right)}{m_{0}^{2}}},$$
+với ${m}_{0}$ là nghiệm dương duy nhất của \eqref{eq1}.
+
+Trường hợp $a ={b}={c}$ thì \eqref{eq1} có nghiệm dương ${m}=2 {a},$ nên $P_{\min }=3 \sqrt{3} a$ (khá hiển nhiên).
+
+Trường hợp $a =b,$ thì \eqref{eq1} trở thành $m^{3}-\left(a^{2}+2 a c\right) m-2 a^{2} c=0$ có nghiệm âm $m=- a$ và có nghiệm dương $m=\frac{a+\sqrt{a^{2}+8 a c}}{2}$ nên bài toán cũng giải được một cách tổng quát.
+
+Ý của tôi là tìm $a,$ $b,$ $c$ không thuộc các trường hợp đặc biệt ở trên mà \eqref{eq1} vẫn có nghiệm nguyên.
+
+Một sự tìm kiếm như thế, dù độ tự do lớn nhưng khá là khó, tôi thu hẹp tìm kiếm lại bằng cách chọn $a =1,$ $b=2$ (đây là trương hợp đơn giản nhất mà ta nghĩ đến, chứ không có gì đặc biệt). Lúc này ta cần phương trình $m ^{3}-(2+3 c) m-4 c=0$ có nghiệm nguyên dương.
+
+Lật lại vấn đề, thay vì tìm $c$ nguyên để $m$ nguyên ta tìm $c$ theo $m$ có dạng $c=\frac{m^{3}-2 m}{3 m+4}.$ Thay vài giá trị đầu tiên của $m$ vào, tôi dừng lại ở $m = 4,$ lúc này $c = 3.5$ tuy chưa phải là nguyên nhưng cũng tương đối tốt rồi.
+
+Và bộ hằng số $a =1,\,b=2,\,c=3.5$ đã được tìm ra. Bài toán được hình thành
+
+\textit{Cho ba số thực dương $x,\,y,\,z$ thỏa mãn $2 x y z=2 x+4 {y}+7 {z}.$ Tìm giá trị nhỏ nhất của}
+$${P}={x}+{y}+{z}.$$
+Ban đầu, tôi gửi đề xuất bài toán cho VMO $2001,$ nhưng thầy Khắc Minh đã “\textit{giữ lại}” để dùng cho đề chọn đội tuyển năm đó và có điều chỉnh đi một chút với phát biểu như chúng ta đã thấy. Đã gần $20$ năm trôi qua, giờ thầy Khắc Minh cũng đã rửa tay gác kiếm nên tôi đã có thể bật mí.
+
+Cuối cùng, xin giới thiệu một số vấn đề để các bạn cùng suy nghĩ
+
+\begin{vande}
+Tìm $m$ nguyên dương sao cho $\frac{m^{3}-2 m}{3 m+4}$ nguyên dương.
+\end{vande}
+
+Kết quả bài này sẽ giải thích là tuy tôi dùng hơi non nhưng $m = 4$ là tối ưu rồi.
+
+\begin{vande}
+Cho $a,\,b,\, c,\, x,\, y,\, z$ là các số thực dương thỏa mãn điều kiện $xyz = ax +by +cz.$ Chứng minh rằng
+$$x+y+z>\sqrt{a+b}+\sqrt{b+c}+\sqrt{c+a}.$$
+\end{vande}
+
+\begin{vande}
+Cho $a,\,b,\, c,\, x,\, y,\, z$ là các số thực dương thỏa mãn điều kiện $xyz = ax +by +cz.$ Gọi $m$ là nghiệm dương duy nhất của phương trình
+$$x^{3}-(a b+b c+c a) x-2 a b c=0.$$
+Chứng minh rằng
+$$x+y+z \geq \sqrt{a+b+\frac{2 a b}{m}}+\sqrt{b+c+\frac{2 b c}{m}}+\sqrt{c+a+\frac{2 c a}{m}}.$$
+\end{vande}
+
+\begin{vande}
+Tồn tại hay không các số nguyên dương phân biệt $a,\,b,\,c$ sao cho phương trình $x^{3}-(a b+b c+c a) x-2 a b c=0$ có nghiệm nguyên dương?
+\end{vande}
+
+\end{document}

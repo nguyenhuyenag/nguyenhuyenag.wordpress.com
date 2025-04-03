@@ -1,0 +1,56 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{../../template/standard_pkgs}
+\input{../../template/common}
+\input{format}
+
+\theoremstyle{plain}
+\newtheorem*{pro}{\cmss\problemColor Problem}
+
+\addto\captionsvietnam{\renewcommand{\proofname}{\cmss\problemColor Proof}}
+
+\begin{document}
+\begin{pro}
+% (\href{https://artofproblemsolving.com/community/c6h3362018}{Link}) 
+Given four positive real numbers $a,\,b,\,x,\,y$ satisfying 
+$$\frac{a}{x}+\frac{b}{y}=1.$$
+Prove that
+$$x+y+\sqrt{x^2+y^2} \ge 2a+2b+2\sqrt{2ab}.$$
+\begin{flushright}
+(Pham Huu Hoai) 
+\end{flushright}
+\end{pro}
+
+\begin{proof}[\cmss\problemColor Solution 1] (Michael Rozenberg)
+By the AM-GM inequality, we have
+\[\begin{aligned}
+x+y+\sqrt{x^2+y^2}-2(a+b)&=\left(x+y+\sqrt{x^2+y^2}\right)\left(\frac{a}{x}+\frac{b}{y}\right)-2(a+b)
+\\&=\left(\frac{y+\sqrt{x^2+y^2}}{x}-1\right)a+\left(\frac{x+\sqrt{x^2+y^2}}{y}-1\right)b
+\\&\geq2\sqrt{\frac{\left(\sqrt{x^2+y^2}+y-x\right)\left(\sqrt{x^2+y^2}+x-y\right)ab}{xy}}
+\\&=2\sqrt{2ab}.
+\end{aligned}\]
+The proof is completed.
+\end{proof}
+
+\begin{proof}[\cmss\problemColor Solution 2]
+(Nguyen Van Huyen) We write the inequality as
+\begin{equation}\label{eq1}
+\left(x+y+\sqrt{x^2+y^2}\right)\left(\frac{a}{x}+\frac{b}{y}\right) \geqslant 2a+2b+2\sqrt{2ab}.
+\end{equation} 
+Let $a=ux, b=vy.$ The inequality \eqref{eq1} become
+\[(x+y+\sqrt{x^2+y^2})(u+v) \geqslant 2ux+2vy+2\sqrt{2xyuv},\]
+equivalent to
+\[(u+v)\sqrt{x^2+y^2} - 2\sqrt{2xyuv} \geqslant (x-y)(u-v).\]
+It's easy to check $(u+v)\sqrt{x^2+y^2} \geqslant 2\sqrt{2xyuv}.$ It remains to prove that
+\[ \left[(u+v)\sqrt{x^2+y^2} - 2\sqrt{2xyuv}\right]^2 \geqslant (x-y)^2(u-v)^2,\]
+or
+\[2uv\left(x^2+y^2\right)+x y(u+v)^2 \geqslant  2 \sqrt{2} (u+v)\sqrt{xyuv(x^2+y^2)}.\]
+By the AM-GM inequality, we have
+\[\begin{aligned}
+2uv\left(x^2+y^2\right)+xy(u+v)^2 &\geqslant 2\sqrt{2uv\left(x^2+y^2\right)\cdot x y(u+v)^2} \\&=  2 \sqrt{2} (u+v)\sqrt{xyuv(x^2+y^2)}.
+\end{aligned}\]
+Equality holds for $2uv\left(x^2+y^2\right) = x y(u+v)^2,$ or $(ay+bx)^2 = 2ab(x^2+y^2).$
+\end{proof}
+
+
+\end{document}
