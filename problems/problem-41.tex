@@ -1,0 +1,47 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}
+Let $a, \,b, \,c$ are \textbf{real} numbers. Prove that
+$$\dfrac{ab}{a^2+4b^2} + \dfrac{bc}{b^2+4c^2} + \dfrac{ca}{c^2+4a^2} \le \dfrac{3}{5}.$$
+\end{pro_no_count}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) We have the following estimate
+\begin{equation}\label{eq02042025}
+\dfrac{bc}{b^2+4c^2} \le \frac{13(a^2+b^2)+4c^2+6b(c+a)-12ca}{50(a^2+b^2+c^2)}.
+\end{equation}
+or
+\[[13(a^2+b^2)+4c^2+6b(c+a)-12ca](b^2+4c^2) \ge 50bc(a^2+b^2+c^2).\]
+We rewrite this inequality as a quadratic polynomial in $a$ as follows
+\[(13b^2-50bc+52c^2)a^2 + 6(b-2c)(b^2+4c^2)a + 13b^4-44b^3c+56b^2c^2-26bc^3+16c^4 \ge 0.\]
+It is easy to check that $13b^2-50bc+52c^2 \ge 0.$ And by the AM-GM inequality, we have
+\[\begin{aligned} 
+13b^4+56b^2c^2+16c^4 & = (13b^4+40b^2c^2)+ 16(b^2c^2+c^4) \\
+% & \geqslant 2\sqrt{13b^4 \cdot 40b^2c^2} + 16 \cdot 2\sqrt{b^2c^2\cdot c^4}
+& \ge 4\sqrt{130}|b^3c|+32|bc^3| \\
+& \ge 44b^3c + 26bc^3.
+\end{aligned}\]
+Therefore, we only need to prove that the discriminant is negative
+\[\begin{aligned}
+\Delta_a & = [3(b-2c)(b^2+4c^2)]^2 - (13b^2-50bc+52c^2)(13b^4-44b^3c+56b^2c^2-26bc^3+16c^4) \\
+& = -2(80b^4-433b^3c+802b^2c^2-532bc^3+128c^4)(b-c)^2 \\
+& = -2f(b,c) \cdot (b-c)^2.
+% & = -\frac{2}{11}[2(6b^2-29bc+12c^2)^2+(b-2c)^2(808b^2-835bc+280c^2)](b-c)^2 \\& \le 0.
+\end{aligned}\]
+% We have $\Delta_a \le 0,$ because
+Since
+\[f(b,c) = \frac{1}{11}[2(6b^2-29bc+12c^2)^2+(b-2c)^2(808b^2-835bc+280c^2)] \ge 0.\]
+we conclude that $\Delta_a \le 0.$ Hence, the estimate \eqref{eq02042025} is proven.
+
+Consequently, we obtain
+\[\sum \dfrac{bc}{b^2+4c^2} \le \sum \frac{13(a^2+b^2)+4c^2+6b(c+a)-12ca}{50(a^2+b^2+c^2)} = \frac{3}{5}.\]
+This completes the proof.
+\end{proof}
+
+\end{document}
