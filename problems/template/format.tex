@@ -161,13 +161,13 @@
 % Configure background (watermark) settings
 \usepackage{background}
 \backgroundsetup {
-	scale=3,                % Scale of the background image (e.g., 3 times the normal size)
-	color=gray,             % Color of the background (if using text or colors)
-	opacity=0.2,            % Opacity of the background
-	angle=45,               % Angle of rotation (in degrees)
-	% position=current page.south, % Position of the background (e.g., south of the current page)
-	vshift=1cm,             % Vertical shift of the background
-	hshift=1cm,             % Horizontal shift of the background
-	contents={\Huge\it Nguyenhuyen\_AG} % Text that appears in the background
+	scale=3.5,
+	color=gray,
+	opacity=0.2,
+	angle=45,
+	position=current page.center, % This centers the watermark
+	vshift=0cm,                   % Reset vertical shift
+	hshift=0cm,                   % Reset horizontal shift
+	contents={\Huge\it Nguyenhuyen\_AG}
 }
 % End configure background settings

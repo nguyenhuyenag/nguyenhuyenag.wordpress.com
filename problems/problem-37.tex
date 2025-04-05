@@ -1,20 +1,21 @@
 \documentclass[12pt,a4paper]{book}
 
 \input{./template/standard_pkgs}
-\input{./template/common}
 \input{./template/format}
+\input{./template/define}
 
 \begin{document}
-\begin{pro}
+\begin{pro_no_count}
 Let $a,\,b,\,c$ be three positive real numbers. Prove that
 \[(a+b+c-3)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}-3\right)+abc+\frac{1}{abc} \geqslant 2.\]
 \begin{flushright}(Nguyen Van Huyen)\end{flushright}
-\end{pro}
+\end{pro_no_count}
 
 \begin{proof}[\cmss\problemColor Solution] (\textit{Nguyen Van Huyen}) We rewrite the inequality as
 \[(a+b+c-3)(ab+bc+ca-3abc)+a^2b^2c^2+1 \geqslant 2abc.\]
 Group the inequality as a quadratic in terms of $a$
-\[(b^2c^2+b+c-3bc)a^2 - [b^2+10bc+c^2 - 3(b+c)(1+bc)]a + bc(b+c) - 3bc + 1 \ge 0.\]
+% \[(b^2c^2+b+c-3bc)a^2 - [b^2+10bc+c^2 - 3(b+c)(1+bc)]a + bc(b+c) - 3bc + 1 \ge 0.\]
+\[(b^2c^2+b+c-3bc)a^2 + [b^2+10bc+c^2 - 3(b+c)(1+bc)]a + bc(b+c) - 3bc + 1 \ge 0.\]
 By the AM-GM inequality, we have
 % \[b^2c^2-3bc+b+c \ge b^2c^2-3bc+2\sqrt{bc}=t^4-3t^2+2t=t(t+2)(t-1)^2  \geqslant 0.\]
 \[b^2c^2+b+c \geqslant 3\sqrt[3]{b^2c^2 \cdot b \cdot c} = 3bc,\]
@@ -25,14 +26,18 @@ We consider two cases
 \item If $b^2+10bc+c^2 \le 3(b+c)(1+bc),$ we calculate the discriminant
 \[\begin{aligned}
 \Delta &= \big[b^2+10bc+c^2 - 3(b+c)(1+bc)\big]^2 - 4(b^2c^2+b+c-3bc)[bc(b+c) - 3bc + 1] \\
-&= -(b-1)^2(c-1)^2[4(b+c)(bc+1) - b^2-14bc-c^2] \\
+&= -[4(b+c)(bc+1) - b^2-14bc-c^2](b-1)^2(c-1)^2 \\
 %&= -\frac13(b-1)^2(c-1)^2\big[4[3(b+c)(1+bc)-(b^2+10bc+c^2)]+(b-c)^2\big] \\
+&= - f(b,c) \cdot (b-1)^2(c-1)^2.
 \end{aligned}\]
 Since 
 %\[4(b+c)(bc+1) - b^2-14bc-c^2 = 4[3(b+c)(1+bc)-b^2-10bc-c^2]+(b-c)^2 \ge 0.\]
-\[\begin{aligned}
-4(b+c)(bc+1) &- b^2-14bc-c^2 \\&= \frac{4[3(b+c)(1+bc)-b^2-10bc-c^2]}{3}+\frac{(b-c)^2}{3} \ge 0.
-\end{aligned}\] 
+%\[\begin{aligned}
+%4(b+c)(bc+1) &- b^2-14bc-c^2 \\
+%% & = \frac{4[3(b+c)(1+bc)-b^2-10bc-c^2]}{3}+\frac{(b-c)^2}{3} \ge 0.
+%& = \frac{4}{3}[3(b+c)(1+bc)-b^2-10bc-c^2]+\frac{(b-c)^2}{3} \ge 0.
+%\end{aligned}\]
+\[f(b,c) = \frac{4}{3}[3(b+c)(1+bc)-b^2-10bc-c^2]+\frac{(b-c)^2}{3} \ge 0.\] 
 We obtain $\Delta \le 0.$
 \end{enumerate}
 The proof completed.
