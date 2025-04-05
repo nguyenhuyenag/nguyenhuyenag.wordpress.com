@@ -1,0 +1,56 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}[Tran Nam Dung, Viet Nam TST 2009]
+Let $a,\,b,\,c$ are positive real numbers. Find all values of the real number $k,$ such that
+% Bài toán. (Trần Nam Dũng, Việt Nam TST 2009) Với $latex a,\,b,\,c$ là các số thực dương. Hãy tìm tất cả các giá trị của số thực $latex k$ sao cho bất đẳng thức dưới đây luôn đúng
+\begin{equation}\label{vntst_2009}
+\left(k+\frac{a}{b+c}\right) \left(k+\frac{b}{c+a}\right) \left(k+\frac{c}{a+b}\right) \geqslant \left(k+\frac{1}{2}\right)^3.
+\end{equation}
+\end{pro_no_count}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) We have a lemma \footnote{\url{https://nguyenhuyenag.wordpress.com/2018/05/12/the-sos-theorem/}}
+
+\begin{lemma}
+Given six \textbf{real} numbers $a, b, c, x, y, z$ satisfying
+$$x+y+z>0, \quad x y+y z+z x \geqslant 0, \quad a+b+c=0.$$
+Prove that
+\[xa^2+yb^2+zc^2 \ge \frac{(xy+yz+zx)(a^2+b^2+c^2)}{2(x+y+z)}.\]
+\end{lemma}
+
+Let $a=b=1,\,c \to 0$ the inequality \eqref{vntst_2009} becomes 
+$$4k^2+2k-1 \geqslant 0.$$ 
+We will prove that $4k^2+2k-1 \geqslant 0,$ which is the condition we are looking for.
+We have
+\[\frac{1}{8(a+b)(b+c)(c+a)} \sum [4k^2(a+b) + (2k-1)c](a-b)^2 \ge 0.\]
+Let
+\[f(a,b,c) = \sum [4k^2(a+b) + (2k-1)c](a-b)^2,\]
+then
+\[f(a,b,c) \ge \frac{\displaystyle \left[8k^2(2k^2+2k-1) \sum a^2 +(48k^4+16k^3-4k^2-4k+1) \sum bc\right]\sum (a^2 - bc)}{[3(2k^2+2k-1)+2(k-1)^2]](a+b+c)}.\]
+% ta giả sử $c = \min\{a,\,b,\,c\},$ sẽ thấy $P \geqslant 0.$
+%Lời giải. (Nguyễn Văn Huyện) Đặt
+%
+%$latex \displaystyle P = \left(k+\frac{a}{b+c}\right) \left(k+\frac{b}{c+a}\right) \left(k+\frac{c}{a+b}\right) - \left(k+\frac{1}{2}\right)^3,$
+%
+%thì
+%
+%$latex \displaystyle P = \frac{2[4k^2(a+b)+(2k-1)c](a-b)^2+\left[(4k^2+2k-1)(a+b)+8k^2c\right](a-c)(b-c) }{8(a+b)(b+c)(c+a)}.$
+%
+%Cho $latex c \to 0$ ta thấy $latex P \geqslant 0$ nếu $latex 4k^2+2k-1 \geqslant 0,$ còn khi $latex 4k^2+2k-1 \geqslant 0,$ ta giả sử $latex c = \min\{a,\,b,\,c\},$ sẽ thấy $latex P \geqslant 0.$
+%
+%Tóm lại $latex 4k^2+2k-1 \geqslant 0$ là giá trị cần tìm.
+%
+%Nhận xét. Một phân tích khác
+%
+%$latex \displaystyle P = \frac{\displaystyle 4[4k^2+(4k^2+2k-1)]c \sum (a-b)^2+X\left[(4k^2+2k-1)X^2+(28k^2-2k+1)(a-b)^2\right] }{32(a+b)(b+c)(c+a)},$
+%
+%với $latex X = a+b-2c.$
+\end{proof}
+
+\end{document}
