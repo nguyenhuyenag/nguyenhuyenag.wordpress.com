@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}
+Let $a,\,b,\,c$ are positive real numbers such that $a^3+b^3+c^3 = 5abc.$ Prove that
+\[(a+b+c)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right) \geqslant 10.\]
+\end{pro_no_count}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) From the condition, we have that $a, \ b, \ c$ are the lengths of the sides of a triangle.
+
+Indeed, suppose $a, \ b, \ c$ are \textbf{not} the lengths of the sides of a triangle, example $a>b+c.$ Then, there exists a real number $x>0$ such that $a=x+b+c.$ At this point
+\[\begin{array}{lcl}
+0 & = & 5 - abc - a^3 - b^3 - c^3 \\ 
+& = & 5(x+b+c)bc  - (x+b+c)^3 - b^3 - c^3 \\
+& = & -[x^3 + 3(b+c)x^2+(3b^2+bc+3c^2)x+2(b+c)(b-c)^2] \\
+& < & 0 \quad \text{(contradiction)}.
+\end{array}\]
+Therefore, $a, \ b, \ c$ must be the lengths of the sides of a triangle.
+
+Now, we have
+\[(a+b+c)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right) - 5 - \frac{a^3+b^3+c^3}{abc} = \frac{(a+b-c)(b+c-a)(c+a-b)}{abc} \ge 0.\]
+Thus
+\[(a+b+c)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right) \ge 10.\]
+The equality holds for $a=b=\frac{c}{2}$ (or any cyclic permutation).
+\end{proof}
+
+\end{document}
+
+
+
+
+
