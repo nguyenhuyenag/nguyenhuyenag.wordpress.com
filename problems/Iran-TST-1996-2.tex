@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}
+Let $a,\,b,\,c$ be non-negative real numbers such that $ab+bc+ca>0.$ Prove that
+\[\frac{1}{(a+b)^2}+\frac{1}{(b+c)^2}+\frac{1}{(c+a)^2} \ge \frac{9}{4(ab+bc+ca)}.\]
+\begin{flushright}(Ji Chen, Iran TST 1996)\end{flushright}
+\end{pro_no_count}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) We have the following estimate
+\begin{equation}\label{eq005}
+\frac{ab+bc+ca}{(b+c)^2} \ge \frac{3}{4} \cdot \frac{10a^2-2(b^2+c^2)+4a(b+c)+7bc}{2(a^2+b^2+c^2)+5(ab+bc+ca)}.
+\end{equation}
+We rewrite the estimate \eqref{eq005} as a polynomial in the variable $a$ as follows
+\[8(b+c)a^3-2(5b^2+6bc+5c^2)a^2-4(b+c)(b^2-4bc+c^2)a+(6b^2+11bc+6c^2)(b-c)^2 \ge 0.\]
+Using the AM-GM inequality, we have
+\[(b+c)a^3 + \frac{a(b^2+c^2)^2}{b+c} \ge 2a^2(b^2+c^2).\]
+% \[(b+c)a^3 \ge 16a^2(b^2+c^2) - \frac{8a(b^2+c^2)^2}{b+c}.\]
+It remains to prove that
+% \[16a^2(b^2+c^2) - \frac{8a(b^2+c^2)^2}{b+c}-2(5b^2+6bc+5c^2)a^2-4(b+c)(b^2-4bc+c^2)a+(6b^2+11bc+6c^2)(b-c)^2 \ge 0,\]
+\[\left[16a^2(b^2+c^2) -2(5b^2+6bc+5c^2)a^2\right] - \left[\frac{8a(b^2+c^2)^2}{b+c} + 4(b+c)(b^2-4bc+c^2)a\right]\]
+\[+(6b^2+11bc+6c^2)(b-c)^2 \ge 0,\]
+equivalent to
+\[6a^2(b-c)^2 - \frac{4a(3b^2+4bc+3c^2)(b-c)^2}{b+c} + (6b^2+11bc+6c^2)(b-c)^2 \ge 0,\]
+or
+\[\frac{(b-c)^2}{b+c}[6(b+c)a^2 - 4(3b^2+4bc+3c^2)a+(b+c)(6b^2+11bc+6c^2)] \ge 0.\]
+% \[8a[b^2+c^2-a(b+c)]^2 + \frac{1}{b+c}\]
+% \[\frac{8a[b^2+c^2-a(b+c)]^2}{b+c} + \frac{(b-c)^2 \cdot f(a)}{b+c} \ge 0,\]
+%\[\frac{8a[b^2+c^2-a(b+c)]^2}{b+c} + \frac{(b-c)^2}{b+c} \cdot f(a) \ge 0,\]
+Let
+\[f(a) = 6(b+c)a^2 - 4(3b^2+4bc+3c^2)a + (b+c)(6b^2+11bc+6c^2).\]
+The quadratic polynomial $f(a) \ge 0$ holds because its discriminant is
+\[\begin{aligned}
+\Delta_a & = [2(3b^2+4bc+3c^2)]^2 - 6(b+c)^2(6b^2+11bc+6c^2) \\
+& = - 2bc(21b^2+34bc+21c^2) \le 0.
+\end{aligned}\]
+The proof is completed.
+\end{proof}
+
+\begin{remark}
+The estimate \eqref{eq005} was proposed by \textit{Dinh Binh Duong}.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
