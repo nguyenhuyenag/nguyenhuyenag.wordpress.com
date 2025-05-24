@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./tex/standard_pkgs}
+\input{./tex/common}
+\input{./tex/format}
+
+\begin{document}
+
+\begin{pro}[Vasile Cirtoaje]
+Let $a, \, b, \, c$ are non-negative real numbers. Prove that
+$$\frac{b+c}{2a^2+bc}+\frac{c+a}{2b^2+ca}+\frac{a+b}{2c^2+ab} \geq \frac{6}{a+b+c}.$$
+\end{pro}
+
+\begin{proof}
+(\textit{Nguyen Van Huyen}) We need to prove
+\[ \frac{b+c}{2a^2+bc} \ge \frac{2}{a+b+c}+ \frac{b+c-2a}{a^2+b^2+c^2}.\]
+We rewrite the inequality as
+\[3(b+c)a^3 - (5b^2+2bc+5c^2)a^2+(b+c)(b^2+bc+c^2)a+(b^2+bc+c^2)(b-c)^2 \geqslant 0.\]
+Using the AM-GM inequality, we have
+\[(b+c)^2a^2 + (b^2+c^2)^2 \ge 2a(b+c)(b^2+c^2),\]
+or
+\[3(b+c)a^3 \ge 6a^2(b^2+c^2) - \frac{3a(b^2+c^2)^2}{b+c}.\]
+It remains to prove that
+\[6a^2(b^2+c^2) - \frac{3a(b^2+c^2)^2}{b+c} - (5b^2+2bc+5c^2)a^2+(b+c)(b^2+bc+c^2)a+(b^2+bc+c^2)(b-c)^2 \geqslant 0.\]
+Simplify to
+\[(b-c)^2[(b+c)a^2-(2b^2+bc+2c^2)a+(b+c)(b^2+bc+c^2)] \ge 0.\]
+We need to prove
+$$f(a) = (b+c)a^2 - (2b^2+bc+2c^2)a + (b+c)(b^2+bc+c^2) \ge 0.$$
+% We calculate the discriminant
+The quadratic polynomial $f(a) \ge 0$ holds because its discriminant is
+\[\begin{aligned}
+\Delta_a &= (2b^2+bc+2c^2)^2 - 4(b+c)^2(b^2+bc+c^2) \\
+& = - bc (8b^2+7bc+8c^2) \le 0.
+\end{aligned}\]
+The proof is completed.
+\end{proof}
+
+\end{document}
