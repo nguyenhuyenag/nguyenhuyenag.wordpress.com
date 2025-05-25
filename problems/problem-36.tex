@@ -1,8 +1,8 @@
 \documentclass[12pt,a4paper]{book}
 
 \input{./template/standard_pkgs}
-\input{./template/common}
 \input{./template/format}
+\input{./template/define}
 
 \begin{document}
 \begin{pro}
@@ -16,7 +16,7 @@ Let $a, b, c$ be three distinct real numbers. Prove that
 \begin{proof}[\cmss\problemColor Solution 1]
 (\textit{Nguyen Van Huyen}) Let
 \[x = \frac{a}{b-c}, \quad y = \frac{b}{c-a}, \quad z = \frac{c}{a-b}.\]
-Then $xy+yz+zx=1$. The inequality \eqref{eq0} becomes
+Then $xy+yz+zx=-1$. The inequality \eqref{eq0} becomes
 \[x^2+y^2+z^2 \ge 2.\]
 Since $xy+yz+zx=1$, we obtain $z = -\frac{1+xy}{x+y}$. We need to prove
 \[x^2+y^2+\left(\frac{1+xy}{x+y}\right)^2 \ge 2,\]
