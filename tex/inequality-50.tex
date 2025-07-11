@@ -1,0 +1,27 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}
+If $a,\,b,\,c$ are the lengths of the sides of a triangle, then
+\[\frac{a(b+c)}{a^2+2bc}+\frac{b(c+a)}{b^2+2ca}+\frac{c(a+b)}{c^2+2ab} \le 2.\]
+\begin{flushright}(Vo Quoc Ba Can, Vasile Cirtoaje)\end{flushright}
+\end{pro_no_count}
+
+\begin{proof}[\cmss Solution]
+(\textit{Nguyen Van Huyen}) If $0 < x \leqslant y$ and $m > 0,$ then
+\[\frac{x}{y} \le \frac{x+m}{y+m}.\]
+Since
+\[a^2+2 b c-a(b+c)=b c-(a-c)(b-a) \geq |a-c||b-a|-(a-c)(b-a) \geq 0.\]
+We have
+\[\frac{a(b+c)}{a^2+2bc} \le \frac{a(b+c)+(b-c)^2}{a^2+2bc+(b-c)^2} = \frac{b^2+c^2+a(b+c)-2bc}{a^2+b^2+c^2}.\]
+% \[\frac{a(b+c)}{a^2+2bc} \le \frac{a(b+c)+(b-c)^2}{a^2+b^2+c^2}.\]
+Therefore
+\[\sum \frac{a(b+c)}{a^2+2bc} \le \sum \frac{b^2+c^2+a(b+c)-2bc}{a^2+b^2+c^2} = \frac{2(a^2+b^2+c^2)}{a^2+b^2+c^2} = 2.\]
+The proof is completed.
+\end{proof}
+\end{document}
