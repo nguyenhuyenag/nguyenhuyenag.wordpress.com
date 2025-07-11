@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+% \chapter{Một số “phân rã” vô nghĩa}
+
+\section{Một số “phân rã” vô nghĩa}
+
+\begin{baitoan} 
+Nếu $a,\,b,\,c,$ là ba số thực không âm thỏa mãn $ab+bc+ca+abc=4,$ thì
+$$a+b+c \geqslant ab+bc+ca.$$
+\begin{flushright}(Viet Nam MO 1996)\end{flushright}
+\end{baitoan}
+
+\begin{proof}
+Từ giả thiết chúng ta có thể đặt
+$$\displaystyle a = \frac{2x}{y+z} , \quad b = \frac{2y}{z+x}, \quad c = \frac{2z}{x+y},\, \quad x, \, y, \, z > 0.$$
+Từ đó đưa bài toán về chứng minh
+\begin{equation}\label{eq1} % (1)
+\sum \frac{x}{y+z} \geqslant 2 \sum \frac{yz}{(z+x)(x+y)}.
+\end{equation}
+Quy đồng và thu gọn thành
+\begin{equation}\label{eq2} 
+x^3+y^3+z^3+3xyz \geqslant xy(x+y) + yz(y+z) + zx(z+x).
+\end{equation}
+Đây chính là bất đẳng thức Schur bậc $3$ nên ta có điều phải chứng minh.
+\end{proof}
+
+Bằng kỹ thuật phân rã \footnote{\url{https://nguyenhuyenag.wordpress.com/2020/03/26/decompose-symmetric/}}, chúng ta tìm được đánh giá
+\begin{equation}\label{eq3} % (3) 
+\frac{x}{y+z}-\frac{2yz}{(x+y)(x+z)} \geqslant \frac{3[2x^{2}-y^2-z^2+2x(y+z)-4yz]}{x^2+y^2+z^2+7(xy+yz+zx)}.
+\end{equation}
+
+Tuy nhiên, sau khi quy đồng và thu gọn (3) ta lại thu được (2). Thật vô nghĩa vì thậm chí nó còn khó quy đồng hơn vì (1) có rất nhiều mẫu số chung còn (3) thì không!
+
+Quan sát \eqref{eq1}, các bạn chắc đoán rằng chỉ cần chuyển vế một số đại lượng, và viết (1) thành dạng
+$$\displaystyle \frac{x}{y+z} - \frac{2yz}{(z+x)(x+y)} \geqslant \frac{2xy}{(x+z)(y+z)}+\frac{2yz}{(y+x)(z+x)} - \frac{y}{z+x}- \frac{z}{x+y}.$$
+Sau đó, thu gọn vế phải là sẽ thu được (1). Tuy nhiên, kết quả này không như mong đợi, vì chúng ta chỉ thu được
+$$\displaystyle \frac{x}{y+z} - \frac{2yz}{(z+x)(x+y)} \geqslant \frac{(2x-y-z)[y^2+z^2+x(y+z)]}{(x+y)(y+z)(z+x)}.$$
+Và chắc hẳn sẽ bất ngờ hơn nếu biết rằng 
+$$\displaystyle \frac{3\left[2x^{2}-y^2-z^2+2x(y+z)-4yz\right]}{x^2+y^2+z^2+7(xy+yz+zx)} \geqslant  \frac{(2x-y-z)[y^2+z^2+x(y+z)]}{(x+y)(y+z)(z+x)}.$$
+
+Bất đẳng thức này sau khi rút gọn cũng chính là (2). 
+
+\begin{baitoan}
+Cho ba số thực không âm $a,\,b,\,c$ thỏa mãn $a+b+c>0.$ Chứng minh rằng
+\begin{equation}\label{eq4}
+\frac{a}{4 a+4b+c}+\frac{b}{4b+4 c+a}+\frac{c}{4c+4a+b} \leqslant \frac{1}{3}.
+\end{equation}
+\begin{flushright}(Pham Kim Hung)\end{flushright}
+\end{baitoan}
+
+\begin{proof}
+Nếu bạn chưa biết thì \eqref{eq4} tương đương với bất đẳng thức nổi tiếng sau đây của Giáo sư Vasile Cîrtoaje
+\[3abc+15(a^2b+b^2c+c^2a) \le 4(a^3+b^3+c^3)+12(ab^2+bc^2+ca^2),\]
+hay
+\begin{equation}\label{eq5}
+27(a^2b+b^2c+c^2a+abc) \leqslant 4(a+b+c)^3.
+\end{equation}
+Bằng kỹ thuật \textit{decompose symmetric}, chúng ta tìm được đánh giá
+\begin{equation}\label{eq6}
+\frac{a}{4a+4b+c} \leqslant \frac{19a^2 + a(20b+41c)+(b-2c)^2}{9[8(a^2+b^2+c^2)+19(ab+bc+ca)]}.
+\end{equation}
+Tuy nhiên, sau khi quy đồng và rút gọn, chúng ta nhận thấy rằng \eqref{eq6} chính là \eqref{eq5}. 
+
+Tương tự như trên, ta thử viết \eqref{eq4} lại như sau
+$$\displaystyle \frac{a}{4 a+4b+c} \leqslant \frac{1}{3} - \frac{b}{4b+4 c+a}-\frac{c}{4c+4a+b},$$
+hay
+$$\displaystyle \frac{a}{4 a+4b+c} \leqslant \frac{4a^2+a(5b+17c)+(b-2c)^2}{3(4b+4 c+a)(4c+4a+b)}.$$
+Ta cũng thấy được rằng
+$$\displaystyle \frac{19a^2 + a(20b+41c)+(b-2c)^2}{3[8(a^2+b^2+c^2)+19(ab+bc+ca)]} \leqslant \frac{4a^2+a(5b+17c)+(b-2c)^2}{(4b+4 c+a)(4c+4a+b)}.$$
+Bất đẳng thức cuối cùng này cũng tương đương với \eqref{eq5}.
+\end{proof}
+\end{document}
