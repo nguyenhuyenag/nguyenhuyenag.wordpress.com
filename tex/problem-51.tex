@@ -1,0 +1,40 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}
+Let $a, \,b,\,c$ be positive real numbers such that $a+b+c=3.$ Prove that
+$$\dfrac{a(b+c)}{a^2+2bc+3} + \dfrac{b(c+a)}{b^2+2ca+3} + \dfrac{c(a+b)}{c^2+2ab+3} \le 1.$$
+\end{pro_no_count}
+
+\begin{proof}
+%We have the following estimate
+%$$\frac{a(b+c)}{a^2+2bc+\frac{(a+b+c)^2}{3}} \leq \frac{a(b+c)}{2(ab+bc+ca)}.$$
+%Indeed, equivalent to
+%$$3(a^2+2bc)+(a+b+c)^2 \geqslant 6(ab+bc+ca),$$
+%or
+%$$4a^2+(b+c)^2 \geqslant 4a(b+c).$$
+%Which is true by the AM-GM inequality
+%$$4a^2+(b+c)^2 \geqslant 2\sqrt{4a^2 \cdot (b+c)^2} = 4a(b+c).$$
+%Therefore
+%$$\sum \frac{a(b+c)}{a^2+2bc+\frac{(a+b+c)^2}{3}} \leq \sum \frac{a(b+c)}{2(ab+bc+ca)} = 1.$$
+%The proof is completed.
+\textit{(Nguyen Van Huyen)} Using the Cauchy-Schwarz inequality and AM-GM inequality, we have
+$$\begin{aligned}
+a^2+\frac{(a+b+c)^2}{3} \geqslant \frac{(a+a+b+c)^2}{1+3}  = \frac{(2a+b+c)^2}{4} \geqslant 2a(b+c).
+\end{aligned}$$
+So
+$$2bc+a^2+\frac{(a+b+c)^2}{3} \geqslant 2(ab+bc+ca),$$
+or
+$$\frac{a(b+c)}{a^2+2bc+\frac{(a+b+c)^2}{3}} \leq \frac{a(b+c)}{2(ab+bc+ca)}.$$
+Therefore
+$$\sum \frac{a(b+c)}{a^2+2bc+3} \leq \sum \frac{a(b+c)}{2(ab+bc+ca)} =1.$$
+The proof is completed.
+\end{proof}
+
+
+\end{document}
