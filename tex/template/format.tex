@@ -52,10 +52,10 @@
 \titleformat{\chapter}[display]
 	{\vspace*{120pt}\usefont{T5}{iwona}{b}{n}\Huge}
 	{
-		\rule{\textwidth}{2.0pt}\vspace*{-\baselineskip}\vspace*{-85pt}
+		\rule{\textwidth}{2.0pt}\vspace*{-\baselineskip}\vspace*{-86pt}
 		\rule{\textwidth}{2.0pt}\vspace*{-\baselineskip}\vspace*{-5pt}
 	}
-  	{0pt}
+  	{5pt} % Điều chỉnh top tên chapter
   	{\filright\filleft}
 
 % \titlespacing*{\chapter}{0pt}{-15pt}{40pt}
@@ -150,13 +150,14 @@
 \renewcommand{\theequation}{\arabic{equation}} 		% Định nghĩa equation đánh số nguyên
 
 \addto\captionsvietnamese{\renewcommand{\proofname}{\cmss\problemColor{Solution}}}
+% \addto\captionsvietnamese{\renewcommand{\proofname}{\cmss\problemColor{Lời giải}}}
 
 \renewcommand{\bibsection}{\section*{References}} % Đổi tên `Tài liệu tham khảo`
 
 \pagestyle{fancy}
 \def\headrulewidth{0.5pt}	% Remove the line of the header
-\fancyhead[LO,RE]{\texttt{nguyenhuyenag.wordpress.com}}
-\fancyhead[RO,LE]{}
+\fancyhead[LO,RE]{\textit{Nguyen Van Huyen}}
+\fancyhead[RO,LE]{\url{nguyenhuyenag.wordpress.com}}
 
 % Configure background (watermark) settings
 \usepackage{background}

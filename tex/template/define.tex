@@ -1,5 +1,4 @@
 % ---- frame problem ----
-\usepackage{mdframed}
 \mdfdefinestyle{frame}{
 	linewidth=3pt,
 	linecolor=gray,
@@ -18,45 +17,37 @@
 \newcommand{\iwona}{\usefont{T5}{iwona}{l}{n}}
 
 \newtheoremstyle{newstyle}
-	{8pt}	% Space above
-	{8pt}	% Space below
-	{\it}	% Body font
-	{}		% Indent amount
-	{}		% Theorem head font
-	{.}		% Punctuation after theorem head
-	{.5em}	% Space after theorem head
-	{}		% Theorem head spec (can be left empty, meaning `normal')
+	{3pt} % Space above
+	{5pt} % Space below
+	{} % Body font
+	{} % Indent amount
+	{} % Theorem head font
+	{.} % Punctuation after theorem head
+	{.5em} % Space after theorem head
+	{} % Theorem head spec (can be left empty, meaning `normal')
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{amsthm,thmtools}
-\declaretheoremstyle[
-	spaceabove=15pt, 	% Khoảng cách giữa 2 theoremstyle
-	spacebelow=15pt		% Khoảng cách giữa 2 theoremstyle
-]{definition}
-\declaretheorem[name=Theorem,numberwithin=chapter,style=definition]{plain,theorem,definition}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\theoremstyle{plain}
+\newtheorem*{pro_no_count}{\cmss\problemColor Problem}
 
 \theoremstyle{newstyle}
 \newtheorem{bode}{\cmss Bổ đề}
-\newtheorem{baitoan}{\cmss\problemColor Bài toán}
-\newtheorem{pro}{\cmss\problemColor Problem}
-\newtheorem*{mypro}{\cmss\problemColor Problem}
-\newtheorem*{bt}{\cmss\problemColor\color{red} Bài toán}
-\newtheorem*{pro_no_count}{\cmss\problemColor Problem}
-\newtheorem*{lemma}{\cmss\problemColor Lemma}
+\newtheorem{baitoan}{\cmss\problemColor Bài}
+\newtheorem*{bt}{\cmss\problemColor Bài toán}
 
 \theoremstyle{definition}
+\newtheorem{pro}{\cmss\problemColor Problem}
 \newtheorem{baitap}{\cmss\problemColor Bài tập}
 \newtheorem*{nhanxet}{\cmss\problemColor Nhận xét}
-\newtheorem*{note}{\cmss\problemColor Note}
-\newtheorem*{remark}{\cmss\problemColor Remark}
 
 \def\ge{\geqslant}
 \def\le{\leqslant}
 \def\geq{\geqslant}
 \def\leq{\leqslant}
+
+% Tăng khoảng cách giữa 2 {pro}
+\makeatletter
+\patchcmd{\endpro}{\endtrivlist}{\endtrivlist\vspace{0.6em}}{}{}
+\makeatother
 
 % ---- code ---- %
 \usepackage[T1]{fontenc}
@@ -91,3 +82,12 @@
   emphstyle=[2]{\color{blue}},
 }
 % ---- end code ---- 
+
+% Dèine -> LastUpdated
+\newcommand{\lastupdated}{%
+	\begin{flushright}
+		\def\parsedate ##1:20##2##3##4##5##6##7##8\empty{20##2##3/##4##5/##6##7}%
+		\def\moddate##1{\expandafter\parsedate\pdffilemoddate{##1}\empty}%
+		\cmss Last Updated: \moddate{\jobname.tex}%
+	\end{flushright}
+}
