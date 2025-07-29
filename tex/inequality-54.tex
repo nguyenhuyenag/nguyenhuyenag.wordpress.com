@@ -1,0 +1,30 @@
+\documentclass[12pt,a4paper]{book}
+
+\input{./template/standard_pkgs}
+\input{./template/format}
+\input{./template/define}
+
+\begin{document}
+
+\begin{pro_no_count}
+Find the least constant $k,$ such that
+$$a+b+c+k\cdot\frac{(a-c)^2}{a+c}\geq \sqrt{3(a^2+b^2+c^2)}$$
+for all $a\ge b\ge c$ be positive real numbers.
+\begin{flushright}(Vasile Cirtoaje, Leonard Giugiuc)\end{flushright}
+\end{pro_no_count}
+
+\begin{proof} (\textit{Nguyen Van Huyen}) Let $a=5,b=c=1$ we get $k \geqslant \frac34.$ We will show that
+$$a+b+c+\frac34\cdot\frac{\left(a-c\right)^2}{a+c}\geq\sqrt{3\left(a^2+b^2+c^2\right)},$$
+or
+\[7(c^2+a^2)+4b(c+a)+2ca \geqslant 4(c+a)\sqrt{3(a^2+b^2+c^2)}.\]
+Using the AM-GM inequality, we have
+%\[4(c+a)\sqrt{3(a^2+b^2+c^2)} \leqslant \frac{8}{3} \cdot \frac{\frac94(c+a)^2+3(a^2+b^2+c^2)}{2}.\]
+\[3(c+a)\sqrt{3(a^2+b^2+c^2)} \leqslant \frac94(c+a)^2+3(a^2+b^2+c^2).\]
+We need to prove
+\[7(c^2+a^2)+4b(c+a)+2ca \geqslant \frac{4}{3}\left[\frac94(c+a)^2+3(a^2+b^2+c^2)\right].\]
+Expand and simplify to
+\[4(a-b)(b-c) \geqslant 0.\]
+Which is true.
+\end{proof}
+
+\end{document}
